@@ -2,12 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Home } from './components/Home';
 import { Login } from './components/Login'
+import { NavBar } from './components/NavBar';
 import { SignUp } from './components/SignUp';
 
 function App() {
   return (
     <div className="App">
-      <header>   
+      <header>
+        <NavBar />   
       </header>
       <body>
         <Routes>
