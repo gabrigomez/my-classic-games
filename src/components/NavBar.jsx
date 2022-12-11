@@ -10,20 +10,26 @@ export const NavBar = () => {
         <div className='home'>
         <GameController className='icon' color='white' size={24}  />
           <Link to="/">
-            Home
+            <p>
+              Home
+            </p>
           </Link>
           </div>
         <div className='login-container'>
           <div className='login'>
           <PaperPlaneRight className='icon' color='white' size={24} />
             <Link to="/login">
-              Login
+              <p>
+                Login
+              </p>
             </Link>
           </div>
           <div className='sign-up'>
             <Scroll className='icon' color='white' size={24} />
             <Link to="/signup">
-              Sign Up
+              <p>
+                Sign Up
+              </p>
             </Link>
           </div>
         </div>      

@@ -6,17 +6,18 @@ nav {
   height: 100%;
 }
 
-.home {
-  padding-left: 20px;
-}
-
 .login-container {
   display: flex;  
   padding-right: 20px;  
 }
 
-.login {
-  margin-right: 12px;
+.login, .home, .sign-up {
+  display: flex ;
+  align-items: center;
+}
+
+.home, .sign-up {
+  padding-left: 20px;
 }
 
 a {
@@ -30,5 +31,5 @@ a:hover {
 }
 
 .icon {
-  margin-right: 4px;  
+  margin-right: 6px;  
 }
