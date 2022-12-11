@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  background-image: url(https://wallpaperaccess.com/full/2825710.gif);
 }
 
 header {
   height: 75px;
+}
+
+body {
+  height: 900px;
 }

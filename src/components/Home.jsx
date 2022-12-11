@@ -1,9 +1,15 @@
 import React from 'react';
+import './Home.css'
 
 export const Home = () => {
   return (
-    <div>
-      Home Componente Here
+    <div className='home-container'>
+      <div className='home-card'>        
+        <h1>
+          Welcome! This is your home component.        
+        </h1>
+        <p> Design with ReactJS</p>
+      </div>
     </div>
   )
 }
