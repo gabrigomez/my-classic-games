@@ -20,7 +20,7 @@ export const SignUp = () => {
         <div className='passwordConfirmation'>
           <input className='sign-up-input' type="password" name='passwordConfirmation' placeholder='Confirm Password' />
         </div>         
-        <button> 
+        <button className='signup-button'> 
           Register
         </button>        
       </div>
