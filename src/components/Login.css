@@ -48,6 +48,13 @@ h1 {
   margin-bottom: 20px;
 }
 
+.login-form:hover {
+  scale: 1.1;
+  transition: .6s;
+}
+.login-form:not(:hover) {
+  transition: .7s;
+}
 
 ::placeholder {
   text-align: center;
