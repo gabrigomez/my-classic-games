@@ -1,0 +1,51 @@
+.sign-up-input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(3, 243, 103);
+  outline: none;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+button {
+  background-color: rgba(155, 155, 155, 0.26);
+  font-size: 24px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(131, 136, 136);
+  transition: .5s;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: rgba(63, 63, 63, 0.856);
+  height: 50%;
+  width: 35%;
+}
+
+.email, .name, .password {
+  margin-bottom: 20px;
+}
+
+
+::placeholder {
+  text-align: center;
+}
