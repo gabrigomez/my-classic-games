@@ -29,10 +29,11 @@
   align-items: center;
 }
 
-.home-icon {
+.home-icon {  
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 300ms, opacity 300ms;  
+  transition: visibility 0s linear 300ms, opacity 300ms;
+  margin-left: 4px;  
 }
 
 .home-card:hover {
@@ -49,6 +50,11 @@
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 1300ms;
+}
+
+.home-card:hover .home-text p {
+  font-weight: bold;
+  color: darkslategray;
 }
 
 .home-card:hover .home-title {

@@ -11,7 +11,7 @@ export const Home = () => {
         </h1>
         <div className='home-text'>
           <p> Design with ReactJS</p>
-          <Atom className='home-icon' size={24} color="rgb(0, 174, 255)" />
+          <Atom className='home-icon' size={28} color="rgb(0, 174, 255)" />
         </div>
       </div>
     </div>
