@@ -1,3 +1,4 @@
+import { Atom } from 'phosphor-react';
 import React from 'react';
 import './Home.css'
 
@@ -8,7 +9,10 @@ export const Home = () => {
         <h1 className='home-title'>
           Welcome! This is your home component.        
         </h1>
-        <p> Design with ReactJS</p>
+        <div className='home-text'>
+          <p> Design with ReactJS</p>
+          <Atom size={24} />
+        </div>
       </div>
     </div>
   )
