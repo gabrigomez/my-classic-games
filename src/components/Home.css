@@ -9,10 +9,28 @@
 }
 
 .home-card {
-  background-color: rgb(227, 235, 235);
+  background-color: rgb(213, 219, 219);
   padding: 20px;
+  border: 2px solid rgba(3, 235, 243, 0.623);
+  border-radius: 8px;
+
+  opacity: .8;
 }
 
 .home-title{
-  color: darkgray;  
+  color: rgb(151, 150, 150);  
+}
+
+.home-card:hover {
+  scale: 1.1;
+  transition: .5s;
+  opacity: 1;
+}
+
+.home-card:not(:hover) {
+  transition: .7s;
+}
+
+.home-card:hover .home-title {
+  color: rgb(0, 174, 255);
 }
