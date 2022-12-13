@@ -10,3 +10,9 @@ header {
 body {
   height: 900px;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
