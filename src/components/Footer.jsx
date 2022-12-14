@@ -4,7 +4,7 @@ import './Footer.css'
 export const Footer = () => {
   return (
     <div className='footer-container'>
-      Footer component
+      <p> Develop by <a href="">gabrigomez</a> </p>
     </div>
   )
 }
