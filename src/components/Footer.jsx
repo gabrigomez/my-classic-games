@@ -1,4 +1,4 @@
-import { FinnTheHuman } from 'phosphor-react';
+import { GithubLogo } from 'phosphor-react';
 import React from 'react';
 import './Footer.css'
 
@@ -6,10 +6,11 @@ export const Footer = () => {
   return (
     <div className='footer-container'>
       <p>
-        Develop by 
-      </p>
-      <FinnTheHuman className='footer-icon' size={20} color="black" />
-      <a className='footer-link' href="https://github.com/gabrigomez">gabrigomez</a>
+        Develop by gabrigomez
+      </p>      
+      <a className='footer-link' href="https://github.com/gabrigomez">
+        <GithubLogo className='footer-icon' size={20} />
+      </a>
     </div>
   )
 }
