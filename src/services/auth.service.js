@@ -11,7 +11,7 @@ const register = (username, email, password) => {
 };
 
 const login = (username, password) => {
-  return axios.post(API_URL + "login", {
+  return axios.post(API_URL + "signin", {
     username,
     password,
   })
@@ -19,7 +19,6 @@ const login = (username, password) => {
     if (response.data.accessToken) {
       localStorage.setItem("user", JSON.stringify(response.data));
     }
-
     return response.data;
   })
 }

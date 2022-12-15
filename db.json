@@ -1,5 +1,9 @@
 {
   "users": [
+    {
+      "email": "toru@example.com",
+      "password": "123456"
+    }
   ],
   "posts": [
   ]
