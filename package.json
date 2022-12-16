@@ -27,6 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "db": "json-server db.json -m ./node_modules/json-server-auth --routes routes.json --port 3001",
+    "nodemon": "nodemon api/app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
