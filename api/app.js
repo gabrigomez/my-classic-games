@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 app.post('/auth/register', async(req, res) => {
   
   const {username, email, password, confirmPassword} = req.body;
-  
+
   if(!username) {
     return res.status(422).json({ msg: 'O nome de usuário é obrigatório'});
   }
@@ -47,12 +47,52 @@ app.post('/auth/register', async(req, res) => {
 
   try {
     await user.save();
-    res.sendStatus(201).json({ msg: 'Usuário cadastrado com sucesso'});
+    res.status(201).json({ msg: 'Usuário cadastrado com sucesso'});
 
   } catch(error) {
     console.log(error);
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   }
+})
+
+//Login user
+app.post("/auth/login", async (req, res) => {
+  const { email, password } = req.body
+
+  if(!email) {
+    return res.status(422).json({ msg: 'O e-mail de usuário é obrigatório'});
+  }
+  if(!password) {
+    return res.status(422).json({ msg: 'A senha de usuário é obrigatória'});
+  }
+
+  const user = await User.findOne({ email: email });
+
+  if (!user) {
+    return res.status(404).json({ msg: 'Usuário não cadastrado'});
+  }
+
+  const checkPassword = await bcrypt.compare(password, user.password)
+
+  if(!checkPassword) {
+    return res.status(422).json({ msg: 'Senha incorreta'});
+  }
+
+  try {
+    const secret = process.env.SECRET;
+
+    const token = jwt.sign({
+      id:user._id,
+    },
+    secret,
+    )
+  res.status(201).json({ msg: 'Login realizado com sucesso', token});
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
+  }
+
 })
 
 //Credencials
