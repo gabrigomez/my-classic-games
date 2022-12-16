@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 
 const app =  express()
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.status(200).json({ msg: "Welcome to the my-game-list api"});
 });
@@ -16,8 +18,6 @@ const dbPass = process.env.DB_PASS;
 
 const dbLink = `mongodb+srv://${dbUser}:${dbPass}@cluster0.1q4iqd6.mongodb.net/?retryWrites=true&w=majority`
 mongoose.set("strictQuery", false);
-
-console.log(dbUser);
 
 mongoose.connect(dbLink).then(() => {
   app.listen(3001)
