@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css'
+import { Navigate } from 'react-router-dom';
 
 
 export const Login = (props) => {
@@ -20,6 +21,7 @@ export const Login = (props) => {
         setPassword("");
         setMessage("Logado com sucesso!");
         localStorage.setItem('token', res.data.token);
+        <Navigate to="/dashboard" />
       }
     } catch (err) {
       console.log(err);
