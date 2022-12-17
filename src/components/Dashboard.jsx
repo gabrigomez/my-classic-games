@@ -8,7 +8,11 @@ export const Dashboard = () => {
   }
   return (
     <div className='dashboard-container'>
-      Dashboard Component
+      <div className='dashboard-card'>
+        <h1 className='dashboard-title'>
+          Dashboard Component
+        </h1>
+      </div>
     </div>
   )
 }
