@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Login.css'
-import { Navigate } from 'react-router-dom';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
 
 
 export const Login = (props) => {
@@ -10,7 +10,7 @@ export const Login = (props) => {
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault();    
     try {
       let res = await axios.post("http://localhost:3001/auth/login", {
           email,
@@ -20,13 +20,16 @@ export const Login = (props) => {
         setEmail("");
         setPassword("");
         setMessage("Logado com sucesso!");
-        localStorage.setItem('token', res.data.token);
-        <Navigate to="/dashboard" />
+        localStorage.setItem('token', res.data.token);       
       }
     } catch (err) {
       console.log(err);
       setMessage(err.response.data.msg)
     }
+
+    //return redirect("/dasboard")
+
+    //TODO: solve redirect in login
   };
 
   return (

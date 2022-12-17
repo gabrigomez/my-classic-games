@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 export const NavBar = () => {
+  const isLogged = localStorage.getItem('token') === null ? false : true;
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+  }
   return (
     <nav>      
         <div className='home'>
@@ -18,11 +23,19 @@ export const NavBar = () => {
         <div className='login-container'>
           <div className='login'>
           <PaperPlaneRight className='icon' color='white' size={24} />
-            <Link to="/login">
+            {!isLogged ? (
+              <Link to="/login">
+                <p>
+                  Login
+                </p>
+              </Link>
+            ) : (
+            <Link to="/login" onClick={handleLogout}>
               <p>
-                Login
+                Logout
               </p>
             </Link>
+            )}
           </div>
           <div className='sign-up'>
             <Scroll className='icon' color='white' size={24} />
