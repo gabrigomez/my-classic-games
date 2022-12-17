@@ -28,6 +28,8 @@ export const SignUp = () => {
       if (res.status === 201) {
         setUsername("");
         setEmail("");
+        setPassword("");
+        setPasswordConfirmation("");
         setMessage("Usuário cadastrado com sucesso!");
       }
     } catch (err) {

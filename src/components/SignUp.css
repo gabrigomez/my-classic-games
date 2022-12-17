@@ -44,6 +44,10 @@ h1 {
   border-radius: 8px;
 }
 
+.message {
+  color: rgb(3, 243, 103);  
+}
+
 .email, .name, .password {
   margin-bottom: 20px;
 }
