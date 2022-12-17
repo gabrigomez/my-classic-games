@@ -19,23 +19,20 @@ export const SignUp = () => {
       return;
     }
     try {
-      let res = await axios.post("http://localhost:3001/auth/register", {
-        body: JSON.stringify({
-          username: username,
-          email: email,
+      let res = await axios.post("http://localhost:3001/auth/register", {        
+          username,
+          email,
           password: password,
-        }),
-      });
-      let resJson = await res.json();
-      if (res.status === 200) {
+          confirmPassword: passwordConfirmation
+        });     
+      if (res.status === 201) {
         setUsername("");
         setEmail("");
-        setMessage("User created successfully");
-      } else {
-        setMessage("Some error occured");
+        setMessage("Usuário cadastrado com sucesso!");
       }
     } catch (err) {
       console.log(err);
+      setMessage(err.response.data.msg)
     }
   };
 
