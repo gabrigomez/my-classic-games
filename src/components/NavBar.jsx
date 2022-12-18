@@ -1,15 +1,19 @@
 import { GameController, PaperPlaneRight, Scroll } from 'phosphor-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './NavBar.css';
 
 export const NavBar = () => {
-  const isLogged = localStorage.getItem('token') === null ? false : true;
+  const [login, setLogin] = useState(true);
+  //const isLogged = localStorage.getItem('token') === null ? false : true;
 
   const handleLogout = () => {
     localStorage.removeItem('token');
+    setLogin(false);
   }
+
+  console.log(login);
   return (
     <nav>      
         <div className='home'>
@@ -23,7 +27,7 @@ export const NavBar = () => {
         <div className='login-container'>
           <div className='login'>
           <PaperPlaneRight className='icon' color='white' size={24} />
-            {!isLogged ? (
+            {!login ? (
               <Link to="/login">
                 <p>
                   Login
