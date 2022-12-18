@@ -1,10 +1,10 @@
 import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from "../actions/types";
 
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem("token"));
 
 const initialState = user 
-  ? { isLoggedin: true, user }
-  : { isLoggedin: false, user: null};
+  ? { isLoggedIn: true, user }
+  : { isLoggedIn: false, user: null};
 
 export default function auth (state = initialState, action) {
   const { type, payload } = action;
@@ -13,29 +13,29 @@ export default function auth (state = initialState, action) {
     case REGISTER_SUCCESS:
       return {
         ...state,
-        isLoggedin: false,
+        isLoggedIn: false,
       };
     case REGISTER_FAIL:
       return {
         ...state,
-        isLoggedin: false,
+        isLoggedIn: false,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        isLoggedin: true,
+        isLoggedIn: true,
         user: payload.user,
       };
     case LOGIN_FAIL:
       return {
         ...state,
-        isLoggedin: false,
+        isLoggedIn: false,
         user: null,
       };
     case LOGOUT:
       return {
         ...state,
-        isLoggedin: false,
+        isLoggedIn: false,
         user: null,
       };
     default:

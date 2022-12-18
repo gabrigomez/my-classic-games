@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './Login.css'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { login } from "../actions/auth";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const { isLoggedIn } = useSelector(state => state.auth);
+  const { message } = useSelector(state => state.message);
 
-  const navigate = useNavigate();    
-  let handleSubmit = async (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();   
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      let res = await axios.post("http://localhost:3001/auth/login", {
-          email,
-          password: password,
-        });     
-      if (res.status === 201) {
-        setEmail("");
-        setPassword("");
-        setMessage("Logado com sucesso!");
-        localStorage.setItem('token', res.data.token);       
-      }
-      navigate('/dashboard');
-    } catch (err) {
-      console.log(err);
-      setMessage(err.response.data.msg)
-    }
+
+    dispatch(login(email, password))
+      .then(() => {
+        navigate("/dashboard");        
+      });
   };
+ 
+  if (isLoggedIn) {
+    return <Navigate to="/dashboard" />;
+  } 
 
   return (
     <div className='login-form-container'>      
