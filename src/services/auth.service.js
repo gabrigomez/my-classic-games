@@ -24,7 +24,7 @@ const login = (email, password) => {
 }
 
 const logout = () => {
-  localStorage.removeItem("user");
+  localStorage.removeItem("token");
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

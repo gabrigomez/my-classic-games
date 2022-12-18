@@ -1,20 +1,20 @@
 import { GameController, PaperPlaneRight, Scroll } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logout } from "../actions/auth";
 
 import './NavBar.css';
 
 export const NavBar = () => {
-  const [login, setLogin] = useState(true);
-
   //TODO: toggle the login and logout
+  const { isLoggedIn } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setLogin(false);
-  }
+  const logOut = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
-  console.log(login);
   return (
     <nav>      
         <div className='home'>
@@ -28,14 +28,14 @@ export const NavBar = () => {
         <div className='login-container'>
           <div className='login'>
           <PaperPlaneRight className='icon' color='white' size={24} />
-            {!login ? (
+            {!isLoggedIn ? (
               <Link to="/login">
                 <p>
                   Login
                 </p>
               </Link>
             ) : (
-            <Link to="/login" onClick={handleLogout}>
+            <Link to="/login" onClick={logOut}>
               <p>
                 Logout
               </p>
