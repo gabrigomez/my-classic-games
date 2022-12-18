@@ -6,7 +6,8 @@ import './NavBar.css';
 
 export const NavBar = () => {
   const [login, setLogin] = useState(true);
-  //const isLogged = localStorage.getItem('token') === null ? false : true;
+
+  //TODO: toggle the login and logout
 
   const handleLogout = () => {
     localStorage.removeItem('token');
