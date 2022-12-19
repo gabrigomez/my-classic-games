@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import './Dashboard.css';
 
 export const Dashboard = () => {
-  if(!localStorage.getItem('token')){
+  const { isLoggedIn } = useSelector(state => state.auth);
+
+  if(!isLoggedIn){
     return <Navigate to="/login" />
   }
   return (
