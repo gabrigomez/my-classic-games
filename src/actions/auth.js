@@ -1,8 +1,8 @@
 import AuthService from "../services/auth.service"
 import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, SET_MESSAGE } from "./types";
 
-export const register = (username, email, password) => (dispatch) => {
-  return AuthService.register(username, email, password).then(
+export const register = (username, email, password, confirmPassword) => (dispatch) => {
+  return AuthService.register(username, email, password, confirmPassword).then(
     (response) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -11,12 +11,12 @@ export const register = (username, email, password) => (dispatch) => {
       dispatch({
         type: SET_MESSAGE,
         payload: response.data.message,
-      });
+      });      
 
       return Promise.resolve();
     },
     (error) => {
-      const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
+      const message = error.response.data.msg;
       
       dispatch({
         type: REGISTER_FAIL,

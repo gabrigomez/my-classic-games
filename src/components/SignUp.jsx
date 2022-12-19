@@ -1,43 +1,34 @@
 import React, { useState } from 'react';
 import './SignUp.css';
-
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { register } from '../actions/auth';
 
 
 export const SignUp = () => {
+  const { message } = useSelector(state => state.message);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();   
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [message, setMessage] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
 
   let handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== passwordConfirmation) {
-      setMessage('Senhas não conferem');
-      return;
-    }
-    try {
-      let res = await axios.post("http://localhost:3001/auth/register", {        
-          username,
-          email,
-          password: password,
-          confirmPassword: passwordConfirmation
-        });     
-      if (res.status === 201) {
+
+    dispatch(register(username, email, password, confirmPassword))
+      .then(() => {
+        navigate("/dashboard");        
         setUsername("");
         setEmail("");
         setPassword("");
-        setPasswordConfirmation("");
-        setMessage("Usuário cadastrado com sucesso!");
-      }
-    } catch (err) {
-      console.log(err);
-      setMessage(err.response.data.msg)
-    }
-  };
-
+        setConfirmPassword("");
+    });
+  }
+  
   return (
     <div className='signup-form-container'>
       <form className='signup-form' onSubmit={handleSubmit}>        
@@ -80,8 +71,8 @@ export const SignUp = () => {
           type="password" 
           name='passwordConfirmation' 
           placeholder='Confirm Password'
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)} 
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)} 
           />
         </div>         
         <button className='signup-button'> 
