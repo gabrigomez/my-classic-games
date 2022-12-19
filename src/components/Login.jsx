@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Login.css'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 import { login } from "../actions/auth";
 
@@ -21,6 +23,17 @@ export const Login = () => {
       .then(() => {
         navigate("/dashboard");        
       });
+    if(message) {
+      toast(`${message}`, {
+        duration: 3000,
+        style: {
+          color: 'red',
+          background: 'none',
+          border: 'rgb(3, 235, 243)',
+          fontWeight: 'bold'
+        }
+      })
+    }
   };
  
   if (isLoggedIn) {
@@ -28,7 +41,8 @@ export const Login = () => {
   } 
 
   return (
-    <div className='login-form-container'>      
+    <div className='login-form-container'>  
+      <Toaster />    
       <form className='login-form' onSubmit={handleSubmit}>        
         <h1>
           Login
@@ -54,7 +68,7 @@ export const Login = () => {
         <button className='login-button' type='submit'> 
           Login
         </button>
-        <div className="message">{message ? <p>{message}</p> : null}</div>
+        {/* <div className="message">{message ? <p>{message}</p> : null}</div> */}
       </form>
     </div>
   )

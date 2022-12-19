@@ -3,6 +3,7 @@ import './SignUp.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../actions/auth';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export const SignUp = () => {
@@ -16,21 +17,33 @@ export const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
 
-  let handleSubmit = async (e) => {
+  let handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch(register(username, email, password, confirmPassword))
       .then(() => {
-        navigate("/dashboard");        
+        navigate("/login");        
         setUsername("");
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-    });
+      });
+    if(message) {
+      toast(`${message}`, {
+        duration: 3000,
+        style: {
+          color: 'red',
+          background: 'none',
+          border: 'rgb(3, 235, 243)',
+          fontWeight: 'bold'
+        }
+      })
+    }
   }
   
   return (
     <div className='signup-form-container'>
+      <Toaster />  
       <form className='signup-form' onSubmit={handleSubmit}>        
         <h1>
           Sign Up
@@ -78,7 +91,6 @@ export const SignUp = () => {
         <button className='signup-button'> 
           Register
         </button>
-        <div className="message">{message ? <p>{message}</p> : null}</div>        
       </form>
     </div>
   )
