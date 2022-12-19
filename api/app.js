@@ -111,7 +111,7 @@ app.post("/auth/login", async (req, res) => {
     },
     secret,
     )
-  res.status(201).json({ msg: 'Login realizado com sucesso', token});
+  res.status(201).json({ msg: 'Login realizado com sucesso', token, user});
 
   } catch (error) {
     console.log(error);
