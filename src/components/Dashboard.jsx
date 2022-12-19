@@ -4,8 +4,7 @@ import { Navigate } from 'react-router-dom';
 import './Dashboard.css';
 
 export const Dashboard = () => {
-  const { isLoggedIn } = useSelector(state => state.auth);
-  
+  const { isLoggedIn, user: currentUser } = useSelector(state => state.auth);  
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
@@ -14,8 +13,11 @@ export const Dashboard = () => {
     <div className='dashboard-container'>
       <div className='dashboard-card'>
         <h1 className='dashboard-title'>
-          Dashboard Component
+          Hey, {currentUser.user.username}
         </h1>
+        <p>
+          Welcome to your dashboard
+        </p>
       </div>
     </div>
   )
