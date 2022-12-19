@@ -7,10 +7,12 @@ export const Footer = () => {
     <div className='footer-container'>
       <p>
         Develop by gabrigomez
-      </p>      
+      </p>
+      <div class="line" />          
       <a className='footer-link' href="https://github.com/gabrigomez">
         <GithubLogo className='footer-icon' size={20} />
       </a>
+     
     </div>
   )
 }

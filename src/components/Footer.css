@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   
-  background-color: rgb(213, 219, 219); 
+  background-color: #2e2d2ed3; 
   height: 50px;
   width: 35%;
   opacity: .6;    
@@ -17,7 +17,7 @@
   margin: 0px 4px 8px 0px;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
-  color: black;
+  color: rgb(128, 124, 124);
 }
 
 .footer-link {
@@ -27,18 +27,26 @@
   font-size: 16px;
 }
 
+.line {
+  border-top: .3px solid rgba(175, 178, 179, 0.623);
+  width: 75%;
+  margin: 2px 2px;
+  opacity: .1;
+}
+
 .footer-container p {
   font-size: 14px;
   margin-bottom: 2px;
 }
 
 .footer-icon:hover {
-  color: rgba(6, 161, 167, 0.623) ;
+  color: rgba(5, 191, 197, 0.623) ;
 }
 
 .footer-container:hover {
   opacity: 1;
   transition: .8s;
+  color: aliceblue
 }
 
 .footer-container:not(:hover) {
@@ -49,4 +57,7 @@
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 1300ms;
+}
+.footer-container:hover .line {
+  opacity: .6;
 }
