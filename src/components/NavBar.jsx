@@ -16,54 +16,47 @@ export const NavBar = () => {
   }, [dispatch]);
 
   return (
-    <nav>      
-        <div className='home'>        
-          {isLoggedIn ? (
-            <div className='home'>
-              <GameController className='icon' color='white' size={24} />
-              <Link to="/dashboard">
-                <p>
-                    Dashboard
-                </p>
-              </Link>
-            </div>
-          ):(
-            <div className='home'>
-              <House className='icon' color='white' size={24} />
-              <Link to="/">
-                <p>
-                  Home
-                </p>
-              </Link>
-            </div>
-          )}
-        </div>
-        <div className='login-container'>
-          <div className='login'>
-          <PaperPlaneRight className='icon' color='white' size={24} />
-            {!isLoggedIn ? (
-              <Link to="/login">
+    <>
+      <nav>
+        {isLoggedIn ? (
+          <Link to="/dashboard" className="navbar-link">
+            <GameController className='icon' size={24} />
+            <p>
+              Dashboard
+            </p>
+          </Link>
+        ) : (
+          <Link to="/" className="navbar-link">
+            <House className='icon' size={24} />
+            <p>
+              Home
+            </p>
+          </Link>
+        )}
+        <div className='login-container'>        
+          {!isLoggedIn ? (
+            <Link to="/login" className="navbar-link">              
+              <PaperPlaneRight className='icon' size={24} />
                 <p>
                   Login
-                </p>
-              </Link>
+                </p>              
+            </Link>
             ) : (
-            <Link to="/login" onClick={logOut}>
-              <p>
-                Logout
-              </p>
+            <Link to="/login" onClick={logOut} className="navbar-link">              
+              <PaperPlaneRight className='icon' size={24} />
+                <p>
+                  Logout
+                </p>            
             </Link>
-            )}
-          </div>
-          <div className='sign-up'>
-            <Scroll className='icon' color='white' size={24} />
-            <Link to="/signup">
-              <p>
-                Sign Up
-              </p>
-            </Link>
-          </div>
-        </div>      
-    </nav>
+          )}         
+          <Link to="/signup" className="navbar-link">
+          <Scroll className='icon' size={24} />
+            <p>
+              Sign Up
+            </p>
+          </Link>          
+        </div>
+      </nav>
+    </>      
   )
 }

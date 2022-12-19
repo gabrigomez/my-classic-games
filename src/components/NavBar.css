@@ -14,13 +14,15 @@ nav {
   padding-right: 20px;  
 }
 
-.login, .home, .sign-up {
+.login, .sign-up, .navbar-link {
   display: flex ;
   align-items: center;
+  padding: 10px;
 }
 
-.home, .sign-up {
-  padding-left: 20px;
+.icon {
+  margin-right: 6px; 
+  color: rgb(247, 244, 244); 
 }
 
 a {
@@ -33,6 +35,7 @@ a:hover {
   color: rgb(3, 235, 243);  
 }
 
-.icon {
-  margin-right: 6px;  
+.navbar-link:hover .icon {
+  color: rgb(3, 235, 243);
 }
+
