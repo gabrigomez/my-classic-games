@@ -3,6 +3,8 @@
   border: none;
   border-bottom: 1px solid rgb(3, 243, 103);
   outline: none;
+
+  color: aquamarine;
 }
 
 h1 {
@@ -40,7 +42,7 @@ h1 {
   height: 50%;
   width: 25%;
 
-  border: 2px solid rgba(3, 243, 103, 0.459);
+  border: 1px solid rgba(3, 243, 103, 0.459);
   border-radius: 8px;
 }
 
