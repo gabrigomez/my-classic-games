@@ -1,5 +1,5 @@
 import AuthService from "../services/auth.service"
-import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, SET_MESSAGE } from "./types";
+import { CLEAR_MESSAGE, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, SET_MESSAGE } from "./types";
 
 export const register = (username, email, password, confirmPassword) => (dispatch) => {
   return AuthService.register(username, email, password, confirmPassword).then(
@@ -20,7 +20,7 @@ export const register = (username, email, password, confirmPassword) => (dispatc
       
       dispatch({
         type: REGISTER_FAIL,
-      })
+      });
 
       dispatch( {
         type: SET_MESSAGE,
@@ -34,10 +34,10 @@ export const register = (username, email, password, confirmPassword) => (dispatc
 
 export const login = (email, password) => (dispatch) => {
   return AuthService.login(email, password).then(
-    (data) => {
+    (response) => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: { user: data }
+        payload: { user: response }
       });
 
       return Promise.resolve();
@@ -47,14 +47,14 @@ export const login = (email, password) => (dispatch) => {
 
       dispatch({
         type: LOGIN_FAIL,
-      })
+      });
 
       dispatch({
         type: SET_MESSAGE,
         payload: message,
       });
 
-      Promise.reject();
+      return Promise.reject();
     }
   );
 };
@@ -65,4 +65,10 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT,
   });
+};
+
+export const closeError = () => (dispatch) => {
+  dispatch({
+    type: CLEAR_MESSAGE,
+  })
 };
