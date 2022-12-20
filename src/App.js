@@ -13,14 +13,14 @@ function App() {
       <header>
         <NavBar />   
       </header>
-      <body>
+      <main>
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path='/' element={<Home />} />
             <Route path="/dashboard" element={<Dashboard/>} />
         </Routes>   
-      </body>
+      </main>
       <footer>        
         <Footer />
       </footer>

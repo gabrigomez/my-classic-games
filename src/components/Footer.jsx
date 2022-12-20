@@ -8,7 +8,7 @@ export const Footer = () => {
       <p>
         Develop by gabrigomez
       </p>
-      <div class="line" />          
+      <div className="line" />          
       <a className='footer-link' href="https://github.com/gabrigomez">
         <GithubLogo className='footer-icon' size={20} />
       </a>
