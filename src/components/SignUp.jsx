@@ -82,7 +82,7 @@ export const SignUp = () => {
         <button className='signup-button'> 
           Register
         </button>
-        {<div className="message">{message ? <p>{message}</p> : null} </div>}
+        <div className="error-signup">{message ? <p>{message}</p> : null} </div>
       </form>
     </div>
   )

@@ -59,7 +59,7 @@ export const Login = () => {
         <button className='login-button'> 
           Login
         </button>
-        {<div className="message">{message ? <p>{message}</p> : null}</div>}
+        <div className="error-login">{message ? <p>{message}</p> : null} </div>
       </form>
     </div>
   )
