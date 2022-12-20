@@ -1,5 +1,7 @@
 :root {
   font-size: 16px;
+  --bg-primary: #2e2d2ed3;
+  --bg-secondary: #2c2b2ce8;
 }
 
 main {
