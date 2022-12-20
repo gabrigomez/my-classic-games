@@ -69,7 +69,7 @@ export const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className='passwordConfirmation'>
+        <div className='password-confirmation'>
           <input 
           className='sign-up-input' 
           type="password" 
