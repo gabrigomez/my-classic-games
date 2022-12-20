@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import './SignUp.css';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { register } from '../actions/auth';
-import toast, { Toaster } from 'react-hot-toast';
+import { closeError, register } from '../actions/auth';
 
+import './SignUp.css';
 
 export const SignUp = () => {
   const { message } = useSelector(state => state.message);
@@ -28,22 +27,14 @@ export const SignUp = () => {
         setPassword("");
         setConfirmPassword("");
       });
-    if(message) {
-      toast(`${message}`, {
-        duration: 3000,
-        style: {
-          color: 'red',
-          background: 'none',
-          border: 'rgb(3, 235, 243)',
-          fontWeight: 'bold'
-        }
-      })
-    }
   }
+  
+  useEffect(() => {
+    dispatch(closeError());
+  }, [dispatch]); 
   
   return (
     <div className='signup-form-container'>
-      <Toaster />  
       <form className='signup-form' onSubmit={handleSubmit}>        
         <h1>
           Sign Up
@@ -91,6 +82,7 @@ export const SignUp = () => {
         <button className='signup-button'> 
           Register
         </button>
+        {<div className="message">{message ? <p>{message}</p> : null} </div>}
       </form>
     </div>
   )
