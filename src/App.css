@@ -1,14 +1,16 @@
-.App {
-  text-align: center;
-  background-image: url(https://wallpaperaccess.com/full/2825710.gif);
-}
-
-header {
-  height: 75px;
+:root {
+  font-size: 16px;
 }
 
 main {
-  height: 900px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(https://wallpaperaccess.com/full/2825710.gif);  
+}
+
+.navbar {
+  height: 8vh;
 }
 
 footer {

@@ -4,13 +4,15 @@
   justify-content: center;
   align-items: center;
   
+  align-self: center;
+  height: 5%;
+  width: 35%;  
+  opacity: .6;
+
   background-color: #2e2d2ed3; 
-  height: 50px;
-  width: 35%;
-  opacity: .6;    
-  
   border: 2px solid rgba(3, 235, 243, 0.623);
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .footer-icon {

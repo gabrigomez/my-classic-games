@@ -10,20 +10,16 @@ import { SignUp } from './components/SignUp';
 function App() {
   return (
     <div className="App">
-      <header>
-        <NavBar />   
-      </header>
-      <main>
+      <main>        
+        <NavBar className="navBar" />        
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path='/' element={<Home />} />
             <Route path="/dashboard" element={<Dashboard/>} />
-        </Routes>   
+        </Routes>                
+        <Footer />        
       </main>
-      <footer>        
-        <Footer />
-      </footer>
     </div>
   );
 }
