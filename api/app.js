@@ -78,7 +78,7 @@ app.post('/auth/register', async(req, res) => {
     console.log(error);
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   }
-})
+});
 
 //Login user
 app.post("/auth/login", async (req, res) => {
@@ -118,7 +118,7 @@ app.post("/auth/login", async (req, res) => {
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   }
 
-})
+});
 
 //Private Route
 app.get("/user/:id", checkToken, async (req, res) => {
@@ -131,7 +131,22 @@ app.get("/user/:id", checkToken, async (req, res) => {
 
   res.status(200).json({ user });
 
-})
+});
+
+// Change username
+app.put("/user/:_id", checkToken, async (req, res) => {
+  const username = req.body;
+
+  if(!username) {
+    return res.status(422).json({ msg: 'O nome de usuário é obrigatório'});
+  }
+  
+  let newUsername = await User.updateOne(
+    req.params,
+    {$set: username}
+  );
+  res.send(newUsername);
+});
 
 //Credencials
 const dbUser = process.env.DB_USER;
