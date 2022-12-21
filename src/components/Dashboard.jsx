@@ -5,7 +5,6 @@ import './Dashboard.css';
 
 export const Dashboard = () => {
   const { isLoggedIn, user: currentUser } = useSelector(state => state.auth);
-  console.log(currentUser)  
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
