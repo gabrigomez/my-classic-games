@@ -1,4 +1,4 @@
-import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from "../actions/types";
+import { EDIT_USER, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from "../actions/types";
 
 const user = JSON.parse(localStorage.getItem("token"));
 
@@ -8,6 +8,9 @@ const initialState = user
 
 export default function auth (state = initialState, action) {
   const { type, payload } = action;
+
+  console.log(payload)
+  console.log(user)
 
   switch (type) {
     case REGISTER_SUCCESS:
@@ -38,6 +41,15 @@ export default function auth (state = initialState, action) {
         isLoggedIn: false,
         user: null,
       };
+    case EDIT_USER: 
+      if (user.id === payload.id) {
+        return {
+          ...state,
+          ...payload          
+        };
+      } else {
+        return user;
+      }
     default:
       return state;
   }

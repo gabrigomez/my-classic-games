@@ -133,19 +133,24 @@ app.get("/user/:id", checkToken, async (req, res) => {
 
 });
 
-// Change username
-app.put("/user/:_id", checkToken, async (req, res) => {
+// Change username - TODO: back the middleware to check user
+app.put("/user/:_id", async (req, res) => {
   const username = req.body;
+  const id = req.params;
+
 
   if(!username) {
     return res.status(422).json({ msg: 'O nome de usuário é obrigatório'});
   }
-  
+
   let newUsername = await User.updateOne(
     req.params,
     {$set: username}
   );
-  res.send(newUsername);
+
+  const user = await User.findById(id, '-password')
+
+  res.status(200).json({ user });
 });
 
 //Credencials
