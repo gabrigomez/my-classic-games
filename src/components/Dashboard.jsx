@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './Dashboard.css';
 
 export const Dashboard = () => {
@@ -33,9 +33,9 @@ export const Dashboard = () => {
               <div>
                 {currentUser.user.email}
               </div>
-              <a href="">
+              <Link to="/edit-user">
                 Edit my infos
-              </a>              
+              </Link>              
             </div>
           </div>
         </div>
