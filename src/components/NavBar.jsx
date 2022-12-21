@@ -1,4 +1,4 @@
-import { GameController, House, PaperPlaneRight, Scroll } from 'phosphor-react';
+import { GameController, House, PaperPlaneRight, Scroll, Sword } from 'phosphor-react';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ export const NavBar = () => {
       <nav>
         {isLoggedIn ? (
           <Link to="/dashboard" className="navbar-link">
-            <GameController className='icon' size={24} />
+            <Sword className='icon' size={24} />
             <p>
               Dashboard
             </p>
@@ -49,7 +49,13 @@ export const NavBar = () => {
             </Link>
         </div>
         ) : (
-        <div className='login-container'>          
+        <div className='login-container'>
+          <Link to="/my-game-list" className='navbar-link'>
+            <GameController className='icon' size={24} />
+            <p>
+              My Game List
+            </p>
+          </Link>          
           <Link to="/login" onClick={logOut} className="navbar-link">              
             <PaperPlaneRight className='icon' size={24} />
               <p>
