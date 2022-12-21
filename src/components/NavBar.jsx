@@ -33,7 +33,13 @@ export const NavBar = () => {
             </p>
           </Link>
         )}
-        <div className='login-container'>        
+        <div className='login-container'>                
+          <Link to="/signup" className="navbar-link">
+          <Scroll className='icon' size={24} />
+            <p>
+              Sign Up
+            </p>
+          </Link>
           {!isLoggedIn ? (
             <Link to="/login" className="navbar-link">              
               <PaperPlaneRight className='icon' size={24} />
@@ -48,13 +54,7 @@ export const NavBar = () => {
                   Logout
                 </p>            
             </Link>
-          )}         
-          <Link to="/signup" className="navbar-link">
-          <Scroll className='icon' size={24} />
-            <p>
-              Sign Up
-            </p>
-          </Link>          
+          )}             
         </div>
       </nav>
     </>      
