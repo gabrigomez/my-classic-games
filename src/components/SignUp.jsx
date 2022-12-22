@@ -6,7 +6,7 @@ import { closeError, register } from '../actions/auth';
 import './SignUp.css';
 
 export const SignUp = () => {
-  const { message } = useSelector(state => state.message);
+  const { message } = useSelector(store => store.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();   
 
@@ -82,7 +82,7 @@ export const SignUp = () => {
         <button className='signup-button'> 
           Register
         </button>
-        <div className="error-signup">{message ? <p>{message}</p> : null} </div>
+        {/* <div className="error-signup">{message ? <p>{message}</p> : null} </div> */}
       </form>
     </div>
   )

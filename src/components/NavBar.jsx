@@ -8,7 +8,7 @@ import './NavBar.css';
 
 export const NavBar = () => {
   //TODO: toggle the login and logout
-  const { isLoggedIn } = useSelector(state => state.auth);
+  const { isLoggedIn } = useSelector(store => store.users);
   const dispatch = useDispatch();
 
   const logOut = useCallback(() => {

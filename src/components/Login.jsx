@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeError, login } from "../actions/auth";
+import { closeError } from "../actions/auth";
+import { login } from '../features/users/userSlice';
 
 import './Login.css'
 
 export const Login = () => {
-  const { message } = useSelector(state => state.message);
+  //const { message } = useSelector(state => state.message);
   const dispatch = useDispatch();
   const navigate = useNavigate();   
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoggedIn } = useSelector(state => state.auth);
-
+  const { isLoggedIn } = useSelector(store => store.users);
 
   let handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(login(email, password))
-      .then(() => {
-        navigate("/dashboard");        
-      });
+    try {
+      dispatch(login({email,password}))
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error)
+    }
   }; 
   
   useEffect(() => {
@@ -59,7 +61,7 @@ export const Login = () => {
         <button className='login-button'> 
           Login
         </button>
-        <div className="error-login">{message ? <p>{message}</p> : null} </div>
+        {/* <div className="error-login">{message ? <p>{message}</p> : null} </div> */}
       </form>
     </div>
   )
