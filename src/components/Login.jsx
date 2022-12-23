@@ -6,26 +6,20 @@ import { login, closeError } from '../features/users/userSlice';
 import './Login.css'
 
 export const Login = () => {
-  //const { message } = useSelector(state => state.message);
   const dispatch = useDispatch();
   const navigate = useNavigate();   
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { isLoggedIn, message } = useSelector(store => store.users);
-  console.log(isLoggedIn);
 
   let handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      dispatch(login({email,password}))
+    dispatch(login({email,password}))
       if (isLoggedIn) {
         navigate("/dashboard");
       }
-    } catch (error) {
-      console.log(error)
-    }
   }; 
   
   useEffect(() => {

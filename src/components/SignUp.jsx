@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { closeError } from '../actions/auth';
-import { register } from '../features/users/userSlice';
+import { register, closeError } from '../features/users/userSlice';
 
 import './SignUp.css';
 
 export const SignUp = () => {
-  const { message } = useSelector(store => store.users);
+  const { message, isSuccess, status} = useSelector(store => store.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();   
 
@@ -16,21 +15,18 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-
+  console.log(status)
   let handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      dispatch(register(username, email, password, confirmPassword));
-      navigate("/login");        
-      setUsername("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");    
-
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(register({username, email, password, confirmPassword}));
+      if(isSuccess) {
+        navigate("/login");        
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");    
+      }
   };
 
   
@@ -87,7 +83,7 @@ export const SignUp = () => {
         <button className='signup-button'> 
           Register
         </button>
-        {/* <div className="error-signup">{message ? <p>{message}</p> : null} </div> */}
+        {<div className="error-signup">{message ? <p>{message}</p> : null} </div>}
       </form>
     </div>
   )
