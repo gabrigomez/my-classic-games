@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeError } from "../actions/auth";
-import { login } from '../features/users/userSlice';
+import { login, closeError } from '../features/users/userSlice';
 
 import './Login.css'
 
@@ -13,14 +12,17 @@ export const Login = () => {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoggedIn } = useSelector(store => store.users);
+  const { isLoggedIn, message } = useSelector(store => store.users);
+  console.log(isLoggedIn);
 
   let handleSubmit = (e) => {
     e.preventDefault();
 
     try {
       dispatch(login({email,password}))
-      navigate("/dashboard");
+      if (isLoggedIn) {
+        navigate("/dashboard");
+      }
     } catch (error) {
       console.log(error)
     }
@@ -61,7 +63,7 @@ export const Login = () => {
         <button className='login-button'> 
           Login
         </button>
-        {/* <div className="error-login">{message ? <p>{message}</p> : null} </div> */}
+        {<div className="error-login">{message ? <p>{message}</p> : null} </div> }
       </form>
     </div>
   )

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { closeError, register } from '../actions/auth';
+import { closeError } from '../actions/auth';
+import { register } from '../features/users/userSlice';
 
 import './SignUp.css';
 
@@ -19,15 +20,19 @@ export const SignUp = () => {
   let handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(register(username, email, password, confirmPassword))
-      .then(() => {
-        navigate("/login");        
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-      });
-  }
+    try {
+      dispatch(register(username, email, password, confirmPassword));
+      navigate("/login");        
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");    
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   
   useEffect(() => {
     dispatch(closeError());
