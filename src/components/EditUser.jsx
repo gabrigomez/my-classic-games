@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { editUser } from '../features/users/userSlice';
 import './EditUser.css'
 
@@ -10,9 +10,7 @@ export const EditUser = () => {
   const [newEmail, setNewEmail] = useState('');
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const id = currentUser._id
-  console.log(id)
+  const id = currentUser._id;
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
@@ -21,7 +19,7 @@ export const EditUser = () => {
   let handleEdit = (e) => {
     e.preventDefault();
 
-    dispatch(editUser({newUsername, id}));
+    dispatch(editUser({username:newUsername, id}));
   };
 
   return (

@@ -21,10 +21,10 @@ export const register = createAsyncThunk('auth/register', async(username, email,
   };
 });
 
-export const editUser = createAsyncThunk('user/id', async (username, id) => {
+export const editUser = createAsyncThunk('user/id', async({username, id}) => {
   try {
-    console.log(id)
-    const response = await axios.put(`${API_URL}user/${id}`, username);
+    const response = await axios.put(`${API_URL}user/${id}`, {username});
+    console.log(response);
     return response;
   } catch (error) {
     return error;
