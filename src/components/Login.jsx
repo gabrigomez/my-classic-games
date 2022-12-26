@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, clearMessage } from '../features/users/userSlice';
 
@@ -7,7 +7,6 @@ import './Login.css'
 
 export const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();   
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,11 +14,7 @@ export const Login = () => {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(login({email,password}))
-      if (isLoggedIn) {
-        navigate("/dashboard");
-      }
+    dispatch(login({email,password}));
   }; 
   
   useEffect(() => {
@@ -28,7 +23,7 @@ export const Login = () => {
 
   if (isLoggedIn) {
     return <Navigate to="/dashboard" />;
-  }   
+  };   
 
   return (
     <div className='login-form-container'>      
@@ -60,5 +55,5 @@ export const Login = () => {
         {<div className="error-login">{message ? <p>{message}</p> : null} </div> }
       </form>
     </div>
-  )
-}
+  );
+};
