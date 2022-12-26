@@ -21,6 +21,16 @@ export const register = createAsyncThunk('auth/register', async(username, email,
   };
 });
 
+export const editUser = createAsyncThunk('user/id', async (username, id) => {
+  try {
+    console.log(id)
+    const response = await axios.put(`${API_URL}user/${id}`, username);
+    return response;
+  } catch (error) {
+    return error;
+  };
+})
+
 
 const userSlice = createSlice({
   name: 'users',

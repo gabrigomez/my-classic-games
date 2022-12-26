@@ -137,20 +137,17 @@ app.get("/user/:id", checkToken, async (req, res) => {
 app.put("/user/:_id", async (req, res) => {
   const username = req.body;
   const id = req.params;
-
-
+  
   if(!username) {
     return res.status(422).json({ msg: 'O nome de usuário é obrigatório'});
   }
 
-  let newUsername = await User.updateOne(
-    req.params,
-    {$set: username}
-  );
+  await User.updateOne(req.params, {$set: username});
 
-  const user = await User.findById(id, '-password')
+  const user = await User.findByIdAndUpdate(id, '-password')
 
   res.status(200).json({ user });
+
 });
 
 //Credencials

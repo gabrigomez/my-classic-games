@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { editUser } from '../actions/edit';
+import { editUser } from '../features/users/userSlice';
 import './EditUser.css'
 
 export const EditUser = () => {
@@ -11,6 +11,8 @@ export const EditUser = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const id = currentUser._id
+  console.log(id)
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
@@ -19,12 +21,7 @@ export const EditUser = () => {
   let handleEdit = (e) => {
     e.preventDefault();
 
-    dispatch(editUser(newUsername, currentUser.user._id))
-      .then(() => {
-        navigate("/dashboard");
-        setNewUsername('');
-        setNewEmail('');
-      });
+    dispatch(editUser({newUsername, id}));
   };
 
   return (
@@ -38,7 +35,7 @@ export const EditUser = () => {
           value={newUsername}
           onChange={(e) => setNewUsername(e.target.value)} />            
         </div>
-        <div className='edit-user-email'>
+        {/* <div className='edit-user-email'>
           <h1>
             Email
           </h1>
@@ -46,7 +43,7 @@ export const EditUser = () => {
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)} 
           />                
-        </div>
+        </div> */}
         <button className='edit-button'>
           Save Changes
         </button>
