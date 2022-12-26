@@ -2,7 +2,7 @@ import { GameController, House, PaperPlaneRight, Scroll, Sword } from 'phosphor-
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { logout } from "../actions/auth";
+import { logout } from '../features/users/userSlice';
 
 import './NavBar.css';
 

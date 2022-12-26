@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from 'axios';
+import storage from "redux-persist/lib/storage";
 
 const API_URL = "http://localhost:3001/"
 
@@ -34,6 +35,11 @@ const userSlice = createSlice({
   reducers: {
     clearMessage: (state) => {
       state.message = ''
+    },
+    logout: (state) => {
+      state.user = null;
+      state.isLoggedIn = false;
+      state.message = '';
     }
   },
   extraReducers: (builder) => {
@@ -56,5 +62,5 @@ const userSlice = createSlice({
 });
 
 
-export const { clearMessage } = userSlice.actions
+export const { clearMessage, logout } = userSlice.actions
 export default userSlice.reducer

@@ -13,7 +13,7 @@ import { persistStore } from 'redux-persist';
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-let persistor = persistStore(store)
+const persistor = persistStore(store)
 
 root.render(
   <React.StrictMode>
