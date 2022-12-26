@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, clearMessage } from '../features/users/userSlice';
+import { login, clearMessage, clearSuccess } from '../features/users/userSlice';
 
 import './Login.css'
 
@@ -10,7 +10,7 @@ export const Login = () => {
   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoggedIn, message } = useSelector(store => store.users);
+  const { isLoggedIn, message, isSuccess } = useSelector(store => store.users);
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +23,11 @@ export const Login = () => {
 
   if (isLoggedIn) {
     return <Navigate to="/dashboard" />;
-  };   
+  };
+  
+  if(isSuccess) {
+    dispatch(clearSuccess());
+  }
 
   return (
     <div className='login-form-container'>      

@@ -29,11 +29,13 @@ const userSlice = createSlice({
     isLoggedIn: false,
     isSuccess: false,
     message: '',
-    loading: false
   },
   reducers: {
     clearMessage: (state) => {
       state.message = ''
+    },
+    clearSuccess: (state) => {
+      state.isSuccess = false;
     },
     logout: (state) => {
       state.user = null;
@@ -45,8 +47,8 @@ const userSlice = createSlice({
     builder.addCase(login.fulfilled, (state, action) => {
       state.message = action.payload;
       state.isLoggedIn = action.payload.user ? true : false;
-      state.loading = false;
       state.user = action.payload.user;
+      state.isSuccess = false;
     });
     builder.addCase(register.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
@@ -61,5 +63,5 @@ const userSlice = createSlice({
 });
 
 
-export const { clearMessage, logout } = userSlice.actions
+export const { clearMessage, clearSuccess, logout } = userSlice.actions
 export default userSlice.reducer
