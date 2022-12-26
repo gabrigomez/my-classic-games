@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from 'axios';
-import storage from "redux-persist/lib/storage";
 
 const API_URL = "http://localhost:3001/"
 
@@ -10,8 +9,8 @@ export const login = createAsyncThunk('auth/login', async(email, password) => {
     return response.data; 
   } catch (error) {
     return error.response.data.msg;
-  }
-}) 
+  };
+});
 
 export const register = createAsyncThunk('auth/register', async(username, email, password, confirmPassword) => {
   try {
@@ -19,8 +18,8 @@ export const register = createAsyncThunk('auth/register', async(username, email,
     return response;
   } catch (error) {
     return error;
-  }
-})
+  };
+});
 
 
 const userSlice = createSlice({

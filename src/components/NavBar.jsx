@@ -7,7 +7,6 @@ import { logout } from '../features/users/userSlice';
 import './NavBar.css';
 
 export const NavBar = () => {
-  //TODO: toggle the login and logout
   const { isLoggedIn } = useSelector(store => store.users);
   const dispatch = useDispatch();
 
