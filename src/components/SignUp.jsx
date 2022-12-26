@@ -16,17 +16,17 @@ export const SignUp = () => {
 
   let handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register({username, email, password, confirmPassword}));      
+    dispatch(register({username, email, password, confirmPassword}));    
   };
  
   useEffect(() => {
     dispatch(clearMessage());
   }, [dispatch]); 
 
-  if (isSuccess) {
+  if (isSuccess) {  
     return <Navigate to="/dashboard" />;
   }  
-  
+ 
   return (
     <div className='signup-form-container'>
       <form className='signup-form' onSubmit={handleSubmit}>        
