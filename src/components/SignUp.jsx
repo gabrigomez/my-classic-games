@@ -1,38 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { register, closeError } from '../features/users/userSlice';
 
 import './SignUp.css';
 
 export const SignUp = () => {
-  const { message, isSuccess, status} = useSelector(store => store.users);
+  const { message, isSuccess} = useSelector(store => store.users);
   const dispatch = useDispatch();
-  const navigate = useNavigate();   
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  console.log(status)
+  console.log(isSuccess)
   let handleSubmit = (e) => {
     e.preventDefault();
-
-    dispatch(register({username, email, password, confirmPassword}));
-      if(isSuccess) {
-        navigate("/login");        
-        setUsername("");
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");    
-      }
+    dispatch(register({username, email, password, confirmPassword}));      
   };
-
-  
+ 
   useEffect(() => {
     dispatch(closeError());
   }, [dispatch]); 
+
+  if (isSuccess) {
+    return <Navigate to="/dashboard" />;
+  }  
   
   return (
     <div className='signup-form-container'>

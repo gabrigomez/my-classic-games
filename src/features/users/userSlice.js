@@ -6,20 +6,18 @@ const API_URL = "http://localhost:3001/"
 export const login = createAsyncThunk('auth/login', async(email, password) => {
   try {
     const response = await axios.post(`${API_URL}auth/login`, email, password);
-    console.log(response.data)
     return response.data; 
   } catch (error) {
     return error.response.data.msg;
   }
 }) 
 
-export const register = createAsyncThunk('auth/register', async(username, email, password, confirmPassword, {rejectedWithValue}) => {
+export const register = createAsyncThunk('auth/register', async(username, email, password, confirmPassword) => {
   try {
     const response = await axios.post(`${API_URL}auth/register`, username, email, password, confirmPassword);
-    return response.data;
+    return response;
   } catch (error) {
-    console.log(error.response)
-    return rejectedWithValue (error.response);
+    return error;
   }
 })
 
@@ -46,13 +44,15 @@ const userSlice = createSlice({
       state.user = action.payload.user;
     });
     builder.addCase(register.fulfilled, (state, action) => {
-      state.message = action.payload
+      console.log(action.payload);      
+      if(action.payload.status === 201) {
+        state.isSuccess = true;
+        state.message = action.payload.data.msg;
+      } else {
+        state.isSuccess = false;
+        state.message = action.payload.response.data.msg;
+      };      
     });
-    builder.addCase(register.rejected, (state, action) => {
-      state.message = action.payload
-      state.isSuccess = action.payload
-    });
-
   }
 });
 
