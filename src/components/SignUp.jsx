@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { register, closeError } from '../features/users/userSlice';
+import { register, clearMessage } from '../features/users/userSlice';
 
 import './SignUp.css';
 
@@ -21,7 +21,7 @@ export const SignUp = () => {
   };
  
   useEffect(() => {
-    dispatch(closeError());
+    dispatch(clearMessage());
   }, [dispatch]); 
 
   if (isSuccess) {

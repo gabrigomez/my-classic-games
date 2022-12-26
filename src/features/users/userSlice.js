@@ -32,7 +32,7 @@ const userSlice = createSlice({
     loading: false
   },
   reducers: {
-    closeError: (state) => {
+    clearMessage: (state) => {
       state.message = ''
     }
   },
@@ -57,5 +57,5 @@ const userSlice = createSlice({
 });
 
 
-export const { closeError } = userSlice.actions
+export const { clearMessage } = userSlice.actions
 export default userSlice.reducer

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, closeError } from '../features/users/userSlice';
+import { login, clearMessage } from '../features/users/userSlice';
 
 import './Login.css'
 
@@ -23,7 +23,7 @@ export const Login = () => {
   }; 
   
   useEffect(() => {
-    dispatch(closeError());
+    dispatch(clearMessage());
   }, [dispatch]);
 
   if (isLoggedIn) {
