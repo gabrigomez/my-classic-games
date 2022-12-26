@@ -5,7 +5,7 @@ import { editUser } from '../actions/edit';
 import './EditUser.css'
 
 export const EditUser = () => {
-  const { isLoggedIn, user: currentUser } = useSelector(state => state.auth);
+  const { isLoggedIn, user: currentUser } = useSelector(store => store.users);
   const [newUsername, setNewUsername] = useState('');
   const [newEmail, setNewEmail] = useState('');
 
@@ -34,8 +34,7 @@ export const EditUser = () => {
           <h1>
             Username
           </h1>
-          <input 
-          
+          <input           
           value={newUsername}
           onChange={(e) => setNewUsername(e.target.value)} />            
         </div>
@@ -43,8 +42,7 @@ export const EditUser = () => {
           <h1>
             Email
           </h1>
-          <input 
-          
+          <input          
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)} 
           />                
