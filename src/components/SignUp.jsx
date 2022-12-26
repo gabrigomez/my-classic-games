@@ -14,7 +14,6 @@ export const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  console.log(isSuccess)
   let handleSubmit = (e) => {
     e.preventDefault();
     dispatch(register({username, email, password, confirmPassword}));      

@@ -44,7 +44,6 @@ const userSlice = createSlice({
       state.user = action.payload.user;
     });
     builder.addCase(register.fulfilled, (state, action) => {
-      console.log(action.payload);      
       if(action.payload.status === 201) {
         state.isSuccess = true;
         state.message = action.payload.data.msg;
