@@ -69,6 +69,9 @@ const userSlice = createSlice({
         state.message = action.payload.response.data.msg;
       };      
     });
+    builder.addCase(editUser.fulfilled, (state, action) => {      
+      state.user.username = action.payload.data.user.username;
+    });
   }
 });
 
