@@ -29,11 +29,13 @@
 .user-gamelist {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  padding-left: 6px;
 
+  margin-right: 12px;
   width: 50%;
   height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .user-card {
@@ -44,12 +46,14 @@
 
   width: 50%;
   height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 60px 10px 0px 10px;
 }
 
 .user-email {
@@ -58,11 +62,29 @@
   align-items: center;
 }
 
-.user-gamelist {
-  margin-top: 20px;
+.username {
+  color: black;
+  text-shadow: 0 0 2px rgba(3, 235, 243, 0.623);
+  margin-bottom: 0px;
+  font-size: 40px;
 }
 
+.email-info {
+  color: rgb(13, 105, 105);
+  text-shadow: 0 0 4px rgba(236, 234, 234, 0.377);
+  margin-bottom: 2px;
+  font-size: 14x;
+}
 
+.edit-info-link {
+  text-decoration: none;
+  color: rgb(13, 105, 105);
+  font-size: 14px;  
+}
+
+.edit-info-link:hover {
+  color: rgb(18, 19, 19);
+}
 
 h3 {
   font-weight: 500;

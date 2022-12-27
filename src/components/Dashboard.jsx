@@ -26,13 +26,13 @@ export const Dashboard = () => {
         <div className='user-card'>
           <div className='user-info'>
             <div className='user-email'>              
-              <div>
-                {currentUser.username}
-              </div>
-              <div>
+                <h1 className='username'>
+                  {currentUser.username}
+                </h1>
+              <h3 className='email-info'>
                 {currentUser.email}
-              </div>
-              <Link to="/edit-user">
+              </h3>
+              <Link className='edit-info-link' to="/edit-user">
                 Edit my infos
               </Link>              
             </div>
