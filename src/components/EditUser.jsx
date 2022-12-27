@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { editUser } from '../features/users/userSlice';
+import { clearMessage, editUser } from '../features/users/userSlice';
 import './EditUser.css'
 
 export const EditUser = () => {
-  const { isLoggedIn, user: currentUser } = useSelector(store => store.users);
+  const { isLoggedIn, user: currentUser, message } = useSelector(store => store.users);
   const [newUsername, setNewUsername] = useState('');
   const [newEmail, setNewEmail] = useState('');
 
@@ -18,8 +18,10 @@ export const EditUser = () => {
  
   let handleEdit = (e) => {
     e.preventDefault();
-
     dispatch(editUser({username:newUsername, id}));
+    setTimeout(() => {
+      dispatch(clearMessage());
+    },2000)
   };
 
   return (
@@ -45,6 +47,7 @@ export const EditUser = () => {
         <button className='edit-button'>
           Save Changes
         </button>
+        {<div className="edit-message">{message ? <p>{message}</p> : null} </div> }
        </form>
     </div>
   )

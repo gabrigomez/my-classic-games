@@ -55,7 +55,7 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      state.message = action.payload;
+      state.message = action.payload.msg;
       state.isLoggedIn = action.payload.user ? true : false;
       state.user = action.payload.user;
       state.isSuccess = false;
@@ -71,6 +71,7 @@ const userSlice = createSlice({
     });
     builder.addCase(editUser.fulfilled, (state, action) => {      
       state.user.username = action.payload.data.user.username;
+      state.message = action.payload.data.msg;
     });
   }
 });

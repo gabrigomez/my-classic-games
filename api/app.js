@@ -146,7 +146,7 @@ app.put("/user/:_id", async (req, res) => {
 
   const user = await User.findByIdAndUpdate(id, '-password')
 
-  res.status(200).json({ user });
+  res.status(200).json({msg: 'Nome atualizado com sucesso!', user });
 
 });
 
