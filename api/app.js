@@ -135,35 +135,24 @@ app.get("/user/:id", checkToken, async (req, res) => {
 
 // Change username - TODO: back the middleware to check user
 app.put("/user/:_id", async (req, res) => {
-  const username = req.body;
   const id = req.params;
+  const username = req.body;
+  const email = req.body;
   
   if(!username) {
     return res.status(422).json({ msg: 'O nome de usuário é obrigatório'});
   }
-
-  await User.updateOne(req.params, {$set: username});
-
-  const user = await User.findByIdAndUpdate(id, '-password')
-
-  res.status(200).json({msg: 'Nome atualizado com sucesso!', user });
-
-});
-
-app.put("/user/email/:_id", async (req, res) => {
-  const email = req.body;
-  const id = req.params;
-
   if(!email) {
     return res.status(422).json({ msg: 'O e-mail de usuário é obrigatório'});
   };
 
-  await User.updateOne(req.params, {$set: email});
+  await User.updateOne(req.params, {$set: username}).updateOne(req.params, {$set: email});
 
   const user = await User.findByIdAndUpdate(id, '-password')
 
-  res.status(200).json({msg: 'E-mail atualizado com sucesso!', user });
-})
+  res.status(200).json({msg: 'Informações atualizadas com sucesso!', user });
+
+});
 
 //Credencials
 const dbUser = process.env.DB_USER;
