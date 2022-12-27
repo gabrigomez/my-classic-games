@@ -49,3 +49,7 @@
   transition: .5s;
   color: black;
 }
+
+input {
+  text-align: center;
+}
