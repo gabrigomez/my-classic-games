@@ -21,9 +21,9 @@ export const register = createAsyncThunk('auth/register', async(username, email,
   };
 });
 
-export const editUser = createAsyncThunk('user/id', async({username, id}) => {
+export const editUser = createAsyncThunk('user/id', async({username, email, id}) => {
   try {
-    const response = await axios.put(`${API_URL}user/${id}`, {username});
+    const response = await axios.put(`${API_URL}user/${id}`, {username, email});
     console.log(response);
     return response;
   } catch (error) {
@@ -71,6 +71,7 @@ const userSlice = createSlice({
     });
     builder.addCase(editUser.fulfilled, (state, action) => {      
       state.user.username = action.payload.data.user.username;
+      state.user.email = action.payload.data.user.email;
       state.message = action.payload.data.msg;
     });
   }

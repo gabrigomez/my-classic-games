@@ -6,8 +6,8 @@ import './EditUser.css'
 
 export const EditUser = () => {
   const { isLoggedIn, user: currentUser, message } = useSelector(store => store.users);
-  const [newUsername, setNewUsername] = useState('');
-  const [newEmail, setNewEmail] = useState('');
+  const [newUsername, setNewUsername] = useState(currentUser.username);
+  const [newEmail, setNewEmail] = useState(currentUser.email);
 
   const dispatch = useDispatch();
   const id = currentUser._id;
@@ -18,7 +18,7 @@ export const EditUser = () => {
  
   let handleEdit = (e) => {
     e.preventDefault();
-    dispatch(editUser({username:newUsername, id}));
+    dispatch(editUser({username:newUsername, email: newEmail, id}));
     setTimeout(() => {
       dispatch(clearMessage());
     },2000);
@@ -35,7 +35,7 @@ export const EditUser = () => {
           value={newUsername}
           onChange={(e) => setNewUsername(e.target.value)} />            
         </div>
-        {/* <div className='edit-user-email'>
+        <div className='edit-user-email'>
           <h1>
             Email
           </h1>
@@ -43,7 +43,7 @@ export const EditUser = () => {
           value={newEmail}
           onChange={(e) => setNewEmail(e.target.value)} 
           />                
-        </div> */}
+        </div>
         <button className='edit-button'>
           Save Changes
         </button>
