@@ -150,6 +150,21 @@ app.put("/user/:_id", async (req, res) => {
 
 });
 
+app.put("/user/email/:_id", async (req, res) => {
+  const email = req.body;
+  const id = req.params;
+
+  if(!email) {
+    return res.status(422).json({ msg: 'O e-mail de usuário é obrigatório'});
+  };
+
+  await User.updateOne(req.params, {$set: email});
+
+  const user = await User.findByIdAndUpdate(id, '-password')
+
+  res.status(200).json({msg: 'E-mail atualizado com sucesso!', user });
+})
+
 //Credencials
 const dbUser = process.env.DB_USER;
 const dbPass = process.env.DB_PASS;

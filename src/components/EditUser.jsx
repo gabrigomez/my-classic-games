@@ -21,7 +21,7 @@ export const EditUser = () => {
     dispatch(editUser({username:newUsername, id}));
     setTimeout(() => {
       dispatch(clearMessage());
-    },2000)
+    },2000);
   };
 
   return (
