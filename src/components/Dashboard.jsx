@@ -33,7 +33,7 @@ export const Dashboard = () => {
                 {currentUser.email}
               </h3>
               <Link className='edit-info-link' to="/edit-user">
-                Edit my infos
+                Edit my info
               </Link>              
             </div>
           </div>

@@ -63,15 +63,15 @@
 }
 
 .username {
-  color: black;
+  color: rgb(241, 237, 237);
   text-shadow: 0 0 2px rgba(3, 235, 243, 0.623);
   margin-bottom: 0px;
   font-size: 40px;
 }
 
 .email-info {
-  color: rgb(13, 105, 105);
-  text-shadow: 0 0 4px rgba(236, 234, 234, 0.377);
+  color: rgb(210, 214, 214);
+  text-shadow: 0 0 4px rgba(14, 13, 13, 0.377);
   margin-bottom: 2px;
   font-size: 14x;
 }
