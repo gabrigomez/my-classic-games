@@ -5,6 +5,7 @@ const register = require('./controllers/register');
 const editUser = require('./controllers/editUser');
 
 const mongoose = require('mongoose');
+const addGame = require('./controllers/addGame');
 require('dotenv').config({ path: "api/.env" });
 
 const app = express();
@@ -23,7 +24,9 @@ app.post('/auth/register', register);
 app.post('/auth/login', login);
 
 // Change username - TODO: back the middleware to check user
-app.put("/user/:_id", editUser)
+app.put("/user/:_id", editUser);
+
+app.post("/game/:_id", addGame);
 
 //Credencials
 const dbUser = process.env.DB_USER;
