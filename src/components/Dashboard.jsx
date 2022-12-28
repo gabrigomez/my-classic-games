@@ -1,3 +1,4 @@
+import { IdentificationBadge } from 'phosphor-react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
@@ -12,19 +13,22 @@ export const Dashboard = () => {
   return (
     <div className='dashboard-container'>
       <div className='dashboard-card'>
-        <div className='user-gamelist'>          
+        <div className='user-gamelist'>
+          <div className='gamelist-info'>          
             <h1 className='dashboard-title'>
-              Hey, {currentUser.username}!
+              Hey, player!
             </h1>          
-          <h3>
-            Welcome to My game list dashboard.
-          </h3>
+            <h3>
+              Welcome to dashboard.
+            </h3> 
+          </div>          
           <div className='gamelist'>
-            My game list will be here
+              My game list will be here
           </div>
         </div>
         <div className='user-card'>
           <div className='user-info'>
+            <IdentificationBadge className='user-icon' size={200} />
             <div className='user-email'>              
                 <h1 className='username'>
                   {currentUser.username}

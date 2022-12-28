@@ -24,27 +24,27 @@
 
 .dashboard-title {
   color: rgb(30, 138, 180);
+  text-align: center;  
 }
 
 .user-gamelist {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   padding-left: 6px;
+  justify-content: space-evenly;
 
   margin-right: 12px;
   width: 50%;
   height: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  align-items: center;
 }
 
 .user-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-
   width: 50%;
+
   height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
@@ -81,9 +81,20 @@
   color: rgb(13, 105, 105);
   font-size: 14px;  
 }
+.user-icon {
+  color: aliceblue;
+}
+
+.user-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(145, 142, 142, 0.2);
+}
 
 .edit-info-link:hover {
-  color: rgb(229, 235, 235);
+  color: rgb(255, 255, 255);
+}
+
+.user-gamelist:hover {
+  box-shadow: 0 4px 8px 0 rgba(7, 124, 153, 0.507);
 }
 
 h3 {
