@@ -38,10 +38,20 @@
   border-radius: 10px;
   color: rgba(3, 235, 243, 0.623);
 }
+
 .edit-message {
   color: rgba(3, 235, 243, 0.753);
   margin-top: 12px; 
   height: 5%;   
+}
+
+.edit-back-button {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.edit-back-button:hover {
+  color: rgba(3, 235, 243, 0.623);
 }
 
 .edit-button:hover {

@@ -1,6 +1,7 @@
+import { ArrowUUpLeft } from 'phosphor-react';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { clearMessage, editUser } from '../features/users/userSlice';
 import './EditUser.css'
 
@@ -10,6 +11,7 @@ export const EditUser = () => {
   const [newEmail, setNewEmail] = useState(currentUser.email);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const id = currentUser._id;
 
   if(!isLoggedIn){
@@ -48,6 +50,7 @@ export const EditUser = () => {
           Save Changes
         </button>
         {<div className="edit-message">{message ? <p>{message}</p> : null} </div> }
+        <ArrowUUpLeft size={36} className="edit-back-button" onClick={() => navigate(-1)}/>
        </form>
     </div>
   )
