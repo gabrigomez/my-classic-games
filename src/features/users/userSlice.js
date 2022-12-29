@@ -34,9 +34,7 @@ export const addGame = createAsyncThunk('game/:id', async({ title, genre, descri
   console.log(title, genre, description, imageUrl, id)
   try {
     const response = await axios.post(`${API_URL}game/${id}`, {title, genre, description, imageUrl});
-    console.log(response);
     return response;
-
   } catch (error) {
     return error;
   }
@@ -86,6 +84,13 @@ const userSlice = createSlice({
       state.user.email = action.payload.data.user.email;
       state.message = action.payload.data.msg;
     });
+    builder.addCase(addGame.fulfilled, (state, action) => {
+      if(action.payload.status === 201) {
+        state.gameList = [...state.gameList, action.payload.data.game];
+      } else {
+        state.message = action.payload.response.data.msg;
+      }
+    })
   }
 });
 

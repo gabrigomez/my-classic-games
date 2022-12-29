@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Game = mongoose.model('Game', {
-  name: String,
+  title: String,
   genre: String,
   description: String,
   image: String,

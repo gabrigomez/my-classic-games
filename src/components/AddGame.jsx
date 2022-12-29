@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addGame } from '../features/users/userSlice';
+import { addGame, clearMessage } from '../features/users/userSlice';
 import "./AddGame.css";
 
 export const AddGame = () => {
@@ -13,11 +13,14 @@ export const AddGame = () => {
   const { user: currentUser, message} = useSelector(store => store.users)
 
   const dispatch = useDispatch();
-  const id = currentUser._id
+  const id = currentUser._id;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addGame({title, genre, description, imageUrl, id}));
+    setTimeout(() => {
+      dispatch(clearMessage());
+    },4000);
   }
 
   return (
