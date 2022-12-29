@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addGame } from '../features/users/userSlice';
 import "./AddGame.css";
 
 export const AddGame = () => {
@@ -6,11 +8,21 @@ export const AddGame = () => {
   const [title, setTitle] = useState('');
   const [genre, setGenre] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
+
+  const { user: currentUser, message} = useSelector(store => store.users)
+
+  const dispatch = useDispatch();
+  const id = currentUser._id
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addGame({title, genre, description, imageUrl, id}));
+  }
 
   return (
     <div className='add-game-container'>      
-      <form className='add-game'>        
+      <form className='add-game' onSubmit={handleSubmit}>        
         <h1>
           Add Game
         </h1>
@@ -46,14 +58,14 @@ export const AddGame = () => {
             type="text" 
             name='imageUrl' 
             placeholder='Image URL'
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
           />
         </div>            
         <button className='add-game-list-button'> 
           Add Game on List
         </button>
-        {/* {<div className="add-game-list-error">{message ? <p>{message}</p> : null} </div> } */}
+        {<div className="add-game-list-error">{message ? <p>{message}</p> : null} </div> }
       </form>
     </div>
   )

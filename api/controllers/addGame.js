@@ -1,10 +1,10 @@
 const Game = require('../models/Game');
 
 async function addGame (req, res) {
-  const { name, genre, description, image } = req.body;
+  const { title, genre, description, imageUrl } = req.body;
   const user_id = req.params;
   
-  if(!name) {
+  if(!title) {
     return res.status(422).json({ msg: 'O nome do jogo é obrigatório'});
   };
 
@@ -16,15 +16,15 @@ async function addGame (req, res) {
     return res.status(422).json({ msg: 'Escreva uma descrição'});
   };
 
-  if(!image) {
+  if(!imageUrl) {
     return res.status(422).json({ msg: 'Adicione uma imagem da web'});
   };
 
   const game = new Game ({
-    name,
+    title,
     genre,
     description,
-    image,
+    imageUrl,
     user_id
   });
 

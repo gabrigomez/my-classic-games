@@ -24,11 +24,22 @@ export const register = createAsyncThunk('auth/register', async(username, email,
 export const editUser = createAsyncThunk('user/id', async({username, email, id}) => {
   try {
     const response = await axios.put(`${API_URL}user/${id}`, {username, email});
-    console.log(response);
     return response;
   } catch (error) {
     return error;
   };
+});
+
+export const addGame = createAsyncThunk('game/:id', async({ title, genre, description, imageUrl, id}) => {
+  console.log(title, genre, description, imageUrl, id)
+  try {
+    const response = await axios.post(`${API_URL}game/${id}`, {title, genre, description, imageUrl});
+    console.log(response);
+    return response;
+
+  } catch (error) {
+    return error;
+  }
 })
 
 
@@ -38,6 +49,7 @@ const userSlice = createSlice({
     user: null,
     isLoggedIn: false,
     isSuccess: false,
+    gameList: [],
     message: '',
   },
   reducers: {
