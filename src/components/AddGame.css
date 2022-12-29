@@ -1,0 +1,77 @@
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(3, 235, 243, 0.5);
+  outline: none;
+  color: aqua;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+.add-game-list-button {
+  background-color: rgba(155, 155, 155, 0.26);
+  font-size: 24px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  color: rgba(3, 235, 243, 0.5);
+}
+
+.add-game-list-button:hover {
+  background-color: rgba(3, 235, 243, 0.623);
+  transition: .5s;
+  color: black
+}
+
+.add-game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;  
+}
+
+.add-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: rgba(63, 63, 63, 0.856);
+  height: 50%;
+  width: 25%;
+
+  border: 1px solid rgba(3, 235, 243, 0.623);
+  border-radius: 8px;
+}
+
+.add-game-list-error {
+  color: rgba(3, 235, 243, 0.753);
+  margin-top: 12px; 
+  height: 5%;   
+}
+
+.title, .genre, .description, .image-url {
+  margin-bottom: 20px;
+}
+
+.add-game:hover {
+  scale: 1.2;
+  transition: .6s;
+}
+.add-game:not(:hover) {
+  transition: .7s;
+}
+
+::placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.568)
+}
+
+input:focus::placeholder {
+  color: transparent;
+}

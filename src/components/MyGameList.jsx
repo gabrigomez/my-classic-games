@@ -1,5 +1,6 @@
 import { PlusCircle } from 'phosphor-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./MyGameList.css";
 
 export const MyGameList = () => {
@@ -31,10 +32,10 @@ export const MyGameList = () => {
           game8
         </div>
       </div>
-      <button className='add-game-button'>
-        <PlusCircle className='add-button-icon' size={24} />
+      <Link className='add-game-button' to='/add-game'>
+        <PlusCircle className='add-button-icon' size={24}/>
         Add game
-      </button>
+      </Link>
       
     </div>
   )

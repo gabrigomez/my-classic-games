@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { AddGame } from './components/AddGame';
 import { Dashboard } from './components/Dashboard';
 import { EditUser } from './components/EditUser';
 import { Footer } from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/edit-user" element={<EditUser/>} />
             <Route path="/my-game-list" element={<MyGameList/>} />
+            <Route path="/add-game" element={<AddGame/>} />
         </Routes>                
         <Footer />        
       </main>
