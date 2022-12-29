@@ -20,15 +20,39 @@
   grid-row-gap: 8px;
   
   opacity: .8;
-  height: 90%;
+  height: 70%;
   width: 80%;
 }
 
 .game-card {
   background-color: rgba(147, 149, 151, 0.356);
-  height: 90%;
+  height: 80%;
   width: 90%;
   margin: 4px;
   
   border: 2px solid rgba(3, 235, 243, 0.623);
+}
+
+.add-game-button {
+  display: flex;
+  align-items: center;
+  background-color: rgba(184, 178, 178, 0.596);
+  font-size: 24px;
+  
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: rgba(3, 235, 243, 0.795);
+
+  padding: 4px;
+}
+
+.add-button-icon {
+  margin-right: 4px;
+}
+
+.add-game-button:hover {
+  background-color: rgba(3, 235, 243, 0.438);
+  transition: .5s;
+  color: black
 }

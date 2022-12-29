@@ -1,3 +1,4 @@
+import { PlusCircle } from 'phosphor-react';
 import React from 'react';
 import "./MyGameList.css";
 
@@ -30,6 +31,11 @@ export const MyGameList = () => {
           game8
         </div>
       </div>
+      <button className='add-game-button'>
+        <PlusCircle className='add-button-icon' size={24} />
+        Add game
+      </button>
+      
     </div>
   )
 }
