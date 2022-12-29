@@ -29,13 +29,6 @@
   font-size: 16px;
 }
 
-.line {
-  border-top: .3px solid rgba(175, 178, 179, 0.623);
-  width: 75%;
-  margin: 2px 2px;
-  opacity: .1;
-}
-
 .footer-container p {
   font-size: 14px;
   margin-bottom: 2px;
@@ -43,6 +36,13 @@
 
 .footer-icon:hover {
   color: rgba(5, 191, 197, 0.623) ;
+}
+
+.line {
+  border-top: .3px solid rgba(175, 178, 179, 0.623);
+  width: 75%;
+  margin: 2px 2px;
+  opacity: .1;
 }
 
 .footer-container:hover {

@@ -1,3 +1,17 @@
+.error-signup {
+  color: rgb(3, 243, 103);
+  margin-top: 12px; 
+  height: 5%; 
+}
+
+.email, .name, .password, .password-confirmation {
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: aliceblue;
+}
+
 .sign-up-input {
   background: none;
   border: none;
@@ -5,10 +19,6 @@
   outline: none;
 
   color: aquamarine;
-}
-
-h1 {
-  color: aliceblue;
 }
 
 .signup-button {
@@ -48,16 +58,6 @@ h1 {
 
   border: 1px solid rgba(3, 243, 103, 0.459);
   border-radius: 8px;
-}
-
-.error-signup {
-  color: rgb(3, 243, 103);
-  margin-top: 12px; 
-  height: 5%; 
-}
-
-.email, .name, .password, .password-confirmation {
-  margin-bottom: 20px;
 }
 
 .signup-form:hover {

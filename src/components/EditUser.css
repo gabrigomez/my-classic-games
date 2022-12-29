@@ -50,6 +50,10 @@
   cursor: pointer;
 }
 
+input {
+  text-align: center;
+}
+
 .edit-back-button:hover {
   color: rgba(3, 235, 243, 0.623);
 }
@@ -58,8 +62,4 @@
   background-color: rgba(3, 235, 243, 0.623);
   transition: .5s;
   color: black;
-}
-
-input {
-  text-align: center;
 }

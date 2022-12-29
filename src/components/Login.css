@@ -1,3 +1,13 @@
+.error-login {
+  color: rgba(3, 235, 243, 0.753);
+  margin-top: 12px; 
+  height: 5%;   
+}
+
+.email {
+  margin-bottom: 20px;
+}
+
 input {
   background: none;
   border: none;
@@ -47,16 +57,6 @@ h1 {
 
   border: 1px solid rgba(3, 235, 243, 0.623);
   border-radius: 8px;
-}
-
-.error-login {
-  color: rgba(3, 235, 243, 0.753);
-  margin-top: 12px; 
-  height: 5%;   
-}
-
-.email {
-  margin-bottom: 20px;
 }
 
 .login-form:hover {
