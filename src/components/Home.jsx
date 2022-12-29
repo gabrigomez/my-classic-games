@@ -7,7 +7,7 @@ export const Home = () => {
     <div className='home-container'>
       <div className='home-card'>        
         <h1 className='home-title'>
-          Welcome! This is your home component.        
+          Welcome to My Game List!        
         </h1>
         <div className='home-text'>
           <p> Design with ReactJS</p>
