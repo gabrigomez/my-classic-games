@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const API_URL = "http://localhost:3001/"
 
-export const login = createAsyncThunk('auth/login', async(email, password) => {
+export const login = createAsyncThunk('login', async(email, password) => {
   try {
     const response = await axios.post(`${API_URL}auth/login`, email, password);
     return response.data; 
@@ -12,7 +12,7 @@ export const login = createAsyncThunk('auth/login', async(email, password) => {
   };
 });
 
-export const register = createAsyncThunk('auth/register', async(username, email, password, confirmPassword) => {
+export const register = createAsyncThunk('register', async(username, email, password, confirmPassword) => {
   try {
     const response = await axios.post(`${API_URL}auth/register`, username, email, password, confirmPassword);
     return response;
@@ -21,7 +21,7 @@ export const register = createAsyncThunk('auth/register', async(username, email,
   };
 });
 
-export const editUser = createAsyncThunk('user/id', async({username, email, id}) => {
+export const editUser = createAsyncThunk('edit user', async({username, email, id}) => {
   try {
     const response = await axios.put(`${API_URL}user/${id}`, {username, email});
     return response;
@@ -30,7 +30,7 @@ export const editUser = createAsyncThunk('user/id', async({username, email, id})
   };
 });
 
-export const addGame = createAsyncThunk('game/:id', async({ title, genre, description, imageUrl, id}) => {
+export const addGame = createAsyncThunk('add game', async({ title, genre, description, imageUrl, id}) => {
   console.log(title, genre, description, imageUrl, id)
   try {
     const response = await axios.post(`${API_URL}game/${id}`, {title, genre, description, imageUrl});
@@ -38,6 +38,16 @@ export const addGame = createAsyncThunk('game/:id', async({ title, genre, descri
   } catch (error) {
     return error;
   }
+});
+
+export const getGame = createAsyncThunk('get game', async ({id}) => {
+  try {
+    const response = await axios.get(`${API_URL}game/${id}`, {id});
+    console.log(response)
+    return response;
+  } catch (error) {
+    return error
+  };  
 });
 
 const initialState = {
@@ -88,7 +98,14 @@ const userSlice = createSlice({
       } else {
         state.message = action.payload.response.data.msg;
       }
-    })
+    });
+    builder.addCase(getGame.fulfilled, (state, action) => {
+      if(action.payload.status === 201) {
+        state.gameList.push(action.payload.data);
+      } else {
+        state.message = action.payload.response.data.msg;
+      }
+    });
   }
 });
 

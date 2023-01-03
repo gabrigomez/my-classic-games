@@ -8,7 +8,7 @@ import "./MyGameList.css";
 export const MyGameList = () => {
   const { gameList } = useSelector(store => store.users);
   gameList?.map((game) => {
-    console.log(game.title);
+    console.log(game);
   })
 
   return (

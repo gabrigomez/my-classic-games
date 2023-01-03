@@ -1,15 +1,24 @@
 import { IdentificationBadge } from 'phosphor-react';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
+import { getGame } from '../features/users/userSlice';
 import './Dashboard.css';
 
 export const Dashboard = () => {
-  const { isLoggedIn, user: currentUser } = useSelector(store => store.users);
+  const { isLoggedIn, user: currentUser, gameList } = useSelector(store => store.users);
+  const dispatch = useDispatch();
+
+  const id = currentUser._id;
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
   }
+
+  if(currentUser && gameList.length === 0) {
+    dispatch(getGame({id}))
+  }
+  
   return (
     <div className='dashboard-container'>
       <div className='dashboard-card'>
