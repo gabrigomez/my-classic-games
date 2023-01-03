@@ -84,6 +84,7 @@ const userSlice = createSlice({
     builder.addCase(addGame.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
         state.gameList = [...state.gameList, action.payload.data.game];
+        state.message = action.payload.data.msg;
       } else {
         state.message = action.payload.response.data.msg;
       }
