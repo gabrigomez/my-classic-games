@@ -6,6 +6,7 @@ const editUser = require('./controllers/editUser');
 
 const mongoose = require('mongoose');
 const addGame = require('./controllers/addGame');
+const getGame = require('./controllers/getGame');
 require('dotenv').config({ path: "api/.env" });
 
 const app = express();
@@ -27,6 +28,8 @@ app.post('/auth/login', login);
 app.put("/user/:_id", editUser);
 
 app.post("/game/:_id", addGame);
+
+app.get("/game/:_id", getGame);
 
 //Credencials
 const dbUser = process.env.DB_USER;
