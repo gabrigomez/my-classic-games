@@ -38,18 +38,19 @@ export const addGame = createAsyncThunk('game/:id', async({ title, genre, descri
   } catch (error) {
     return error;
   }
-})
+});
 
+const initialState = {
+  user: null,
+  isLoggedIn: false,
+  isSuccess: false,
+  gameList: [],
+  message: '',
+};
 
 const userSlice = createSlice({
   name: 'users',
-  initialState: {
-    user: null,
-    isLoggedIn: false,
-    isSuccess: false,
-    gameList: [],
-    message: '',
-  },
+  initialState,
   reducers: {
     clearMessage: (state) => {
       state.message = ''
@@ -57,11 +58,7 @@ const userSlice = createSlice({
     clearSuccess: (state) => {
       state.isSuccess = false;
     },
-    logout: (state) => {
-      state.user = null;
-      state.isLoggedIn = false;
-      state.message = '';
-    }
+    logout: () => initialState
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
