@@ -7,9 +7,10 @@ import "./MyGameList.css";
 
 export const MyGameList = () => {
   const { gameList } = useSelector(store => store.users);
-  gameList?.map((game) => {
-    console.log(game);
-  })
+  console.log(gameList)
+  // gameList?.map((game) => {
+  //   console.log(game);
+  // })
 
   return (
     <div className='my-game-list-container'>

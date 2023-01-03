@@ -13,11 +13,11 @@ export const Dashboard = () => {
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
-  }
+  };
 
-  if(currentUser && gameList.length === 0) {
-    dispatch(getGame({id}))
-  }
+  if(currentUser && gameList.length < 1) {
+    dispatch(getGame({id}));
+  };
   
   return (
     <div className='dashboard-container'>
