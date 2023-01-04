@@ -23,7 +23,7 @@ export const Dashboard = () => {
     <div className='dashboard-container'>
       <div className='dashboard-card'>
         <div className='user-gamelist'>
-          <div className='gamelist-info'>          
+          <div className='dashboard-gamelist-info'>          
             <h1 className='dashboard-title'>
               Hey, player!
             </h1>          
