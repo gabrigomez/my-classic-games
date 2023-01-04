@@ -1,14 +1,21 @@
 import { Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { showGameDetails } from '../features/users/userSlice';
+import { Navigate } from 'react-router-dom';
+import { deleteGame, getGame, showGameDetails } from '../features/users/userSlice';
 import './GameDetails.css';
 
 export const GameDetails = () => {
-  const { game } = useSelector(store => store.users);
+  const { user: currentUser, game } = useSelector(store => store.users);
   const gameId = window.location.href.split('/').reverse()[0];
+  
+  const id = currentUser._id;
 
   const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteGame({id: gameId}));
+  }
 
   if(!game) {
     dispatch(showGameDetails({id: gameId}));
@@ -31,7 +38,7 @@ export const GameDetails = () => {
             <div className='game-description-info'>
               {game.description}
             </div>
-            <Trash size={36} className='game-delete-button'/>
+            <Trash size={36} className='game-delete-button' onClick={handleDelete}/>
           </div>
         ) : 
         <div>

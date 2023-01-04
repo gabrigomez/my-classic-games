@@ -57,6 +57,15 @@ export const showGameDetails = createAsyncThunk('show game details', async ({id}
   };
 });
 
+export const deleteGame = createAsyncThunk('delete a game', async({id}) => {
+  console.log('chamou');
+  try {
+    await axios.delete(`${API_URL}game/${id}`, {id});
+  } catch (error) {
+    return error;
+  };
+});
+
 const initialState = {
   user: null,
   isLoggedIn: false,
