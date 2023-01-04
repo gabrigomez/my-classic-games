@@ -12,18 +12,15 @@ export const MyGameList = () => {
       <div className='gamelist-card'>
         {gameList?.map((game) => (
           <div className='gamelist-info'>
-            <div>
-              {game.title}
+            <div className='game-title'>
+                {game.title}
             </div>
             <div>
-              {game.genre}
+              <img src={game.imageUrl} alt="" className='game-image'/>              
             </div>
-            <div>
-              {game.description}
-            </div>
-            <div>
-              <img src={game.imageUrl} alt="" />              
-            </div>
+            <p>
+              More Info
+            </p>
           </div>          
         ))}     
       </div>
