@@ -31,7 +31,6 @@ export const editUser = createAsyncThunk('edit user', async({username, email, id
 });
 
 export const addGame = createAsyncThunk('add game', async({ title, genre, description, imageUrl, id}) => {
-  console.log(title, genre, description, imageUrl, id)
   try {
     const response = await axios.post(`${API_URL}game/${id}`, {title, genre, description, imageUrl});
     return response;
@@ -52,7 +51,6 @@ export const getGame = createAsyncThunk('get game', async ({id}) => {
 export const showGameDetails = createAsyncThunk('show game details', async ({id}) => {
   try {
     const response = await axios.get(`${API_URL}game/details/${id}`, {id});
-    console.log(response);
     return response
   } catch (error) {
     return error;
@@ -77,6 +75,9 @@ const userSlice = createSlice({
     },
     clearSuccess: (state) => {
       state.isSuccess = false;
+    },
+    clearGame: (state) => {
+      state.game = null;
     },
     logout: () => initialState
   },
@@ -116,7 +117,6 @@ const userSlice = createSlice({
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
-        console.log(action.payload.data)
         state.game = action.payload.data[0];
       };
     });
@@ -124,5 +124,5 @@ const userSlice = createSlice({
 });
 
 
-export const { clearMessage, clearSuccess, logout } = userSlice.actions
+export const { clearMessage, clearSuccess, clearGame, logout } = userSlice.actions
 export default userSlice.reducer

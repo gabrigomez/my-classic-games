@@ -37,7 +37,6 @@ async function login (req, res) {
   res.status(201).json({ token, user});
 
   } catch (error) {
-    console.log(error);
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   }
 

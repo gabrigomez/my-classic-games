@@ -33,7 +33,6 @@ async function addGame (req, res) {
     res.status(201).json({ msg: 'Game cadastrado com sucesso', game});
 
   } catch(error) {
-    console.log(error);
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   };
 };

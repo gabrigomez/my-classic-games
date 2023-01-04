@@ -1,11 +1,17 @@
 import { PlusCircle } from 'phosphor-react';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { clearGame } from '../features/users/userSlice';
 import "./MyGameList.css";
 
 export const MyGameList = () => {
-  const { gameList } = useSelector(store => store.users);
+  const { gameList, game } = useSelector(store => store.users);
+  const dispatch = useDispatch();
+
+  if(game) {
+    dispatch(clearGame());
+  };
 
   return (
     <div className='my-game-list-container'>

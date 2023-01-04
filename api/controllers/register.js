@@ -41,7 +41,6 @@ async function register (req, res) {
     res.status(201).json({ msg: 'Usuário cadastrado com sucesso'});
 
   } catch(error) {
-    console.log(error);
     res.status(500).json({ msg: 'Aconteceu um erro no servidor. Tente mais tarde'});
   };
 };
