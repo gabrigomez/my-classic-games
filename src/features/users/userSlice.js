@@ -116,7 +116,8 @@ const userSlice = createSlice({
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
-        state.game = action.payload.data;
+        console.log(action.payload.data)
+        state.game = action.payload.data[0];
       };
     });
   }
