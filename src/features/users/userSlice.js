@@ -43,11 +43,20 @@ export const addGame = createAsyncThunk('add game', async({ title, genre, descri
 export const getGame = createAsyncThunk('get game', async ({id}) => {
   try {
     const response = await axios.get(`${API_URL}game/${id}`, {id});
-    console.log(response)
     return response;
   } catch (error) {
     return error
   };  
+});
+
+export const showGameDetails = createAsyncThunk('show game details', async ({id}) => {
+  try {
+    const response = await axios.get(`${API_URL}game/details/${id}`, {id});
+    console.log(response);
+    return response
+  } catch (error) {
+    return error;
+  };
 });
 
 const initialState = {
@@ -56,6 +65,7 @@ const initialState = {
   isSuccess: false,
   gameList: null,
   message: '',
+  game: null,
 };
 
 const userSlice = createSlice({
@@ -102,6 +112,11 @@ const userSlice = createSlice({
     builder.addCase(getGame.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
         state.gameList = action.payload.data;        
+      };
+    });
+    builder.addCase(showGameDetails.fulfilled, (state, action) => {
+      if(action.payload.status === 201) {
+        state.game = action.payload.data;
       };
     });
   }
