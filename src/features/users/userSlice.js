@@ -54,7 +54,7 @@ const initialState = {
   user: null,
   isLoggedIn: false,
   isSuccess: false,
-  gameList: [],
+  gameList: null,
   message: '',
 };
 
@@ -100,8 +100,8 @@ const userSlice = createSlice({
       }
     });
     builder.addCase(getGame.fulfilled, (state, action) => {
-      if(action.payload.status === 201 && state.gameList.length < 1) {
-        state.gameList.push(action.payload.data);
+      if(action.payload.status === 201) {
+        state.gameList = action.payload.data;        
       };
     });
   }

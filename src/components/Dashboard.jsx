@@ -15,7 +15,7 @@ export const Dashboard = () => {
     return <Navigate to="/login" />
   };
 
-  if(currentUser && gameList.length < 1) {
+  if(currentUser && gameList === null) {
     dispatch(getGame({id}));
   };
   
