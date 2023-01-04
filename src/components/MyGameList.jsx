@@ -28,7 +28,6 @@ export const MyGameList = () => {
         <PlusCircle className='add-button-icon' size={24}/>
         Add game
       </Link>
-      
     </div>
   )
 }

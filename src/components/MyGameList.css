@@ -78,6 +78,10 @@
   height: 100%;
 }
 
+.gamelist-back-button:hover {
+  color: rgba(3, 235, 243, 0.623);
+}
+
 .add-game-button:hover {
   background-color: rgba(3, 235, 243, 0.438);
   transition: .5s;

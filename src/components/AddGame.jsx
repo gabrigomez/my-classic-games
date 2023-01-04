@@ -1,5 +1,7 @@
+import { ArrowUUpLeft } from 'phosphor-react';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addGame, clearMessage } from '../features/users/userSlice';
 import "./AddGame.css";
 
@@ -13,6 +15,8 @@ export const AddGame = () => {
   const { user: currentUser, message} = useSelector(store => store.users)
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const id = currentUser._id;
 
   const handleSubmit = (e) => {
@@ -69,6 +73,7 @@ export const AddGame = () => {
           Add Game on List
         </button>
         {<div className="add-game-list-error">{message ? <p>{message}</p> : null} </div> }
+        <ArrowUUpLeft size={36} className="edit-back-button" onClick={() => navigate(-1)}/>
       </form>
     </div>
   )
