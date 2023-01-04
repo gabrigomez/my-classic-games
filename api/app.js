@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const addGame = require('./controllers/addGame');
 const getGame = require('./controllers/getGame');
 const showGameDetails = require('./controllers/showGameDetails');
+const deleteGame = require('./controllers/deleteGame');
 require('dotenv').config({ path: "api/.env" });
 
 const app = express();
@@ -33,6 +34,8 @@ app.post("/game/:_id", addGame);
 app.get("/game/:_id", getGame);
 
 app.get("/game/details/:_id", showGameDetails);
+
+app.delete("/game/:_id", deleteGame);
 
 //Credencials
 const dbUser = process.env.DB_USER;
