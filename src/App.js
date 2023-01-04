@@ -4,6 +4,7 @@ import { AddGame } from './components/AddGame';
 import { Dashboard } from './components/Dashboard';
 import { EditUser } from './components/EditUser';
 import { Footer } from './components/Footer';
+import { GameDetails } from './components/GameDetails';
 import { Home } from './components/Home';
 import { Login } from './components/Login'
 import { MyGameList } from './components/MyGameList';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/edit-user" element={<EditUser/>} />
             <Route path="/my-game-list" element={<MyGameList/>} />
             <Route path="/add-game" element={<AddGame/>} />
+            <Route path="/game/details/:id" element={<GameDetails />} />
         </Routes>                
         <Footer />        
       </main>

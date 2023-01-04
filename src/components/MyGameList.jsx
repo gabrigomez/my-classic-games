@@ -18,9 +18,9 @@ export const MyGameList = () => {
             <div>
               <img src={game.imageUrl} alt="" className='game-image'/>              
             </div>
-            <p>
-              More Info
-            </p>
+            <Link to={`/game/details/${game._id}`}>
+              More Info 
+            </Link>
           </div>          
         ))}     
       </div>
