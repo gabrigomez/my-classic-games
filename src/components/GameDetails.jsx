@@ -1,3 +1,4 @@
+import { Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { showGameDetails } from '../features/users/userSlice';
@@ -30,6 +31,7 @@ export const GameDetails = () => {
             <div className='game-description-info'>
               {game.description}
             </div>
+            <Trash size={36} className='game-delete-button'/>
           </div>
         ) : 
         <div>

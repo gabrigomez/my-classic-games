@@ -48,3 +48,12 @@
   font-size: 40px;
   margin: 16px 6px 2px;
 }
+
+.game-delete-button {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.game-delete-button:hover {
+  color: rgba(3, 235, 243, 0.623);
+}
