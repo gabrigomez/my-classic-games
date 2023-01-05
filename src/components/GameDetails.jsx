@@ -1,17 +1,20 @@
 import { Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteGame, showGameDetails } from '../features/users/userSlice';
+import { clearMessage, deleteGame, showGameDetails } from '../features/users/userSlice';
 import './GameDetails.css';
 
 export const GameDetails = () => {
-  const { game } = useSelector(store => store.users);
+  const { game, message } = useSelector(store => store.users);
   const gameId = window.location.href.split('/').reverse()[0];
   
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(deleteGame({id: gameId}));
+    setTimeout(() => {
+      dispatch(clearMessage());
+    },4000);
   }
 
   if(!game) {
@@ -36,6 +39,9 @@ export const GameDetails = () => {
               {game.description}
             </div>
             <Trash size={36} className='game-delete-button' onClick={handleDelete}/>
+            <div className="game-details-message">
+              {message ? message : null} 
+            </div>
           </div>
         ) : 
         <div>

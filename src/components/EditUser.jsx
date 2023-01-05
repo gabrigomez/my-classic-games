@@ -49,8 +49,10 @@ export const EditUser = () => {
         <button className='edit-button'>
           Save Changes
         </button>
-        {<div className="edit-message">{message ? <p>{message}</p> : null} </div> }
         <ArrowUUpLeft size={36} className="edit-back-button" onClick={() => navigate(-1)}/>
+        <div className="edit-message">
+          {message ? message : null} 
+        </div>
        </form>
     </div>
   )

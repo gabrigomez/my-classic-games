@@ -72,8 +72,10 @@ export const AddGame = () => {
         <button className='add-game-list-button'> 
           Add Game on List
         </button>
-        {<div className="add-game-list-error">{message ? <p>{message}</p> : null} </div> }
-        <ArrowUUpLeft size={36} className="edit-back-button" onClick={() => navigate(-1)}/>
+        <ArrowUUpLeft size={36} className="add-game-back-button" onClick={() => navigate(-1)}/>
+        <div className="add-game-list-message">
+          {message ? message : null} 
+        </div> 
       </form>
     </div>
   )

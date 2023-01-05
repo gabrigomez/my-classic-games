@@ -1,3 +1,9 @@
+.add-game-back-button {
+  color: aliceblue;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
 .add-game-list-button {
   background-color: rgba(155, 155, 155, 0.26);
   font-size: 24px;
@@ -37,9 +43,8 @@
   border-radius: 8px;
 }
 
-.add-game-list-error {
+.add-game-list-message {
   color: rgba(3, 235, 243, 0.753);
-  margin-top: 12px; 
   height: 5%;   
 }
 
@@ -63,8 +68,13 @@ h1 {
   scale: 1.2;
   transition: .6s;
 }
+
 .add-game:not(:hover) {
   transition: .7s;
+}
+
+.add-game-back-button:hover {
+  color: rgba(3, 235, 243, 0.623);
 }
 
 ::placeholder {

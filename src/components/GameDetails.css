@@ -54,6 +54,12 @@
   cursor: pointer;
 }
 
+.game-details-message {
+  color: rgba(3, 235, 243, 0.753);
+  margin-top: 6px; 
+  height: 5%;
+}
+
 .game-delete-button:hover {
   color: rgba(3, 235, 243, 0.623);
 }
