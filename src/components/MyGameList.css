@@ -33,8 +33,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 8px;
-  grid-row-gap: 8px;
+  grid-column-gap: 40px;
+  grid-row-gap: 20px;
   
   opacity: .8;
   height: 70%;
@@ -77,11 +77,6 @@
   height: 100%;
 }
 
-.add-game-button:hover {
-  background-color: rgba(3, 235, 243, 0.438);
-  transition: .5s;
-  color: black
-}
 .add-game-button:hover {
   background-color: rgba(3, 235, 243, 0.438);
   transition: .5s;
