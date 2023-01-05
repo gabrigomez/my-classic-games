@@ -1,4 +1,4 @@
-import { PlusCircle } from 'phosphor-react';
+import { Eye, EyeClosed, PlusCircle } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -17,17 +17,16 @@ export const MyGameList = () => {
     <div className='my-game-list-container'>
       <div className='gamelist-card'>
         {gameList?.map((game) => (
-          <div className='gamelist-info'>
+          <Link to={`/game/details/${game._id}`} className='gamelist-info'>
             <div className='game-title'>
                 {game.title}
             </div>
             <div>
               <img src={game.imageUrl} alt="" className='game-image'/>              
             </div>
-            <Link to={`/game/details/${game._id}`}>
-              More Info 
-            </Link>
-          </div>          
+            <EyeClosed className='eye-closed' size={36} />
+            <Eye className='eye-open' size={36} />                  
+          </Link>
         ))}     
       </div>
       <Link className='add-game-button' to='/add-game'>

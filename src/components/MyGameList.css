@@ -16,9 +16,17 @@
   margin-right: 4px;
 }
 
+.eye-open {
+  display: none;
+}
+
+.eye-closed {
+  display: block;
+}
+
 .gamelist-card {
   background-color: rgb(22, 22, 22);
-  padding: 20px;
+  padding: 30px;
   border: 2px solid rgba(3, 235, 243, 0.623);
   border-radius: 8px;
 
@@ -33,20 +41,11 @@
   width: 80%;
 }
 
-.game-card {
-  background-color: rgba(147, 149, 151, 0.356);
-  height: 80%;
-  width: 90%;
-  margin: 4px;
-  
-  border: 2px solid rgba(3, 235, 243, 0.623);
-}
-
 .gamelist-info {
   display: flex;
   flex-direction: column;
   align-items: center;  
-  background-color: rgba(240, 248, 255, 0.356);
+  background-color: rgba(31, 73, 109, 0.356);
 
   border: 2px solid rgba(3, 235, 243, 0.623);
   border-radius: 4px;
@@ -63,10 +62,10 @@
 .game-title {
   font-size: 20px;
   font-weight: bold;
-  color: aqua;
-  margin-top: 20px;
+  color: rgb(30, 138, 180);
+  margin-top: 10px;
 
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .my-game-list-container {
@@ -78,12 +77,37 @@
   height: 100%;
 }
 
-.gamelist-back-button:hover {
-  color: rgba(3, 235, 243, 0.623);
-}
-
 .add-game-button:hover {
   background-color: rgba(3, 235, 243, 0.438);
   transition: .5s;
   color: black
 }
+.add-game-button:hover {
+  background-color: rgba(3, 235, 243, 0.438);
+  transition: .5s;
+  color: black
+}
+
+.gamelist-back-button:hover {
+  color: rgba(3, 235, 243, 0.623);
+}
+
+.gamelist-info:hover {
+  scale: 1.1;
+  transition: .5s;
+  opacity: 1;
+}
+
+.gamelist-info:not(:hover) {
+  transition: .7s;
+}
+
+.gamelist-info:hover .eye-closed {
+  display: none;
+}
+
+.gamelist-info:hover .eye-open {
+  display: block;  
+}
+
+
