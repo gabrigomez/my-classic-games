@@ -5,7 +5,6 @@
   align-items: center;
   
   height: 100%;
-  /* background: url(https://giffiles.alphacoders.com/212/212812.gif); */
 }
 
 .dashboard-card {
@@ -20,6 +19,12 @@
   opacity: .8;
   height: 80%;
   width: 80%;
+}
+
+.dashboard-game-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
 }
 
 .dashboard-title {
@@ -38,6 +43,24 @@
   text-decoration: none;
   color: rgb(13, 105, 105);
   font-size: 14px;  
+}
+
+.game-image {
+  margin: 10px;
+}
+
+.game-gallery-images {
+  display: flex;
+}
+
+.game-gallery-info {
+  display: flex;
+  align-items: center;
+}
+
+.game-gallery-info p {
+  color: aliceblue;
+  margin-left: 4px;
 }
 
 h3 {

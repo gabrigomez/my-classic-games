@@ -1,4 +1,4 @@
-import { IdentificationBadge } from 'phosphor-react';
+import { ClipboardText, IdentificationBadge } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
@@ -31,9 +31,23 @@ export const Dashboard = () => {
               Welcome to dashboard.
             </h3> 
           </div>          
-          <div className='gamelist'>
-              My game list will be here
-          </div>
+          {gameList? (
+            <div className='dashboard-game-gallery'>
+              <div className='game-gallery-info'>
+                <ClipboardText color='white' size={36} />
+                <p>My Game List</p>
+              </div>
+              <div className='game-gallery-images'>
+                {gameList.map((game) => (
+                  <img className='game-image' src={game.imageUrl} alt="" />                    
+                ))}
+              </div>
+            </div>          
+          ) : (
+            <div>
+              Sem games na lista.
+            </div>
+          )}
         </div>
         <div className='user-card'>
           <div className='user-info'>
