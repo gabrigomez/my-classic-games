@@ -58,7 +58,6 @@ export const showGameDetails = createAsyncThunk('show game details', async ({id}
 });
 
 export const deleteGame = createAsyncThunk('delete a game', async({id}) => {
-  console.log('chamou');
   try {
     await axios.delete(`${API_URL}game/${id}`, {id});
   } catch (error) {
@@ -129,6 +128,13 @@ const userSlice = createSlice({
         state.game = action.payload.data[0];
       };
     });
+    builder.addCase(deleteGame.fulfilled, (state) => {
+      for(let g = 0; g < state.gameList.length; g++) {
+        if (state.gameList[g]._id === state.game._id) {
+          state.gameList.splice(g, 1);
+        };
+      };
+    })
   }
 });
 
