@@ -1,16 +1,13 @@
 import { Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import { deleteGame, getGame, showGameDetails } from '../features/users/userSlice';
+import { deleteGame, showGameDetails } from '../features/users/userSlice';
 import './GameDetails.css';
 
 export const GameDetails = () => {
-  const { user: currentUser, game } = useSelector(store => store.users);
+  const { game } = useSelector(store => store.users);
   const gameId = window.location.href.split('/').reverse()[0];
   
-  const id = currentUser._id;
-
   const dispatch = useDispatch();
 
   const handleDelete = () => {
