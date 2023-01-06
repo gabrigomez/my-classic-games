@@ -16,6 +16,8 @@
   flex-direction: column;
   align-items: center;
   opacity: .8;
+
+  height: 15%;
 }
 
 .home-title{
@@ -24,6 +26,7 @@
 
 .home-text {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -31,13 +34,14 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
-  margin-left: 4px;  
+  margin: 0px;  
 }
 
 .home-card:hover {
   scale: 1.1;
   transition: .5s;
   opacity: 1;
+  height: 20%;
 }
 
 .home-card:not(:hover) {
