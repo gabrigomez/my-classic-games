@@ -8,9 +8,7 @@ import './Dashboard.css';
 export const Dashboard = () => {
   const { isLoggedIn, user: currentUser, gameList } = useSelector(store => store.users);
   const dispatch = useDispatch();
-
   const id = currentUser._id;
-  console.log(gameList);
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
