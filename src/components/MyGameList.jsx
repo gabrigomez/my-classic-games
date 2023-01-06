@@ -34,8 +34,8 @@ export const MyGameList = () => {
             <div>
               <img src={game.imageUrl} alt="" className='game-image'/>              
             </div>
-            <EyeClosed className='eye-closed' size={36} />
-            <Eye className='eye-open' size={36} />                  
+            <EyeClosed className='eye-closed' size={20} />
+            <Eye className='eye-open' size={20} />                  
           </Link>
         ))}
       </div>

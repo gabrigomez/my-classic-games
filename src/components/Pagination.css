@@ -1,5 +1,6 @@
-.pagination-nav {
-  margin-top: 4px;
+.pagination-nav > ul {
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 .pagination-nav > ul > li > a {

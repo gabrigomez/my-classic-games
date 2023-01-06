@@ -32,11 +32,11 @@
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 40px;
-  grid-row-gap: 20px;
-  
+  grid-template-rows: repeat(2, 1fr);  
   opacity: .8;
+
+  align-items: center;
+  justify-items: center;
   height: 80%;
   width: 80%;
 }
@@ -51,6 +51,8 @@
   border-radius: 4px;
   cursor: pointer;
   height: 90%;
+
+  width: 80%;
 }
 
 .game-image {
