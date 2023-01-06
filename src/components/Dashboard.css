@@ -53,7 +53,7 @@
 .game-gallery-images {
   display: flex;
   overflow-x: auto;
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .game-gallery-info {
