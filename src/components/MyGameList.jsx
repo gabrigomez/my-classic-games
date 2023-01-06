@@ -30,7 +30,7 @@ export const MyGameList = () => {
         ))}     
       </div>
       <Link className='add-game-button' to='/add-game'>
-        <PlusCircle className='add-button-icon' size={24}/>
+        <PlusCircle className='add-button-icon' size={18}/>
         Add game
       </Link>
     </div>
