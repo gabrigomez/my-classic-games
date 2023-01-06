@@ -113,7 +113,11 @@ const userSlice = createSlice({
     });
     builder.addCase(addGame.fulfilled, (state, action) => {
       if(action.payload.status === 201) {
-        state.gameList = [action.payload.data.game];
+        if (state.gameList === null) {
+          state.gameList = [action.payload.data.game];
+        } else {
+          state.gameList = [...state.gameList, action.payload.data.game];
+        };
         state.message = action.payload.data.msg;
       } else {
         state.message = action.payload.response.data.msg;
@@ -123,7 +127,7 @@ const userSlice = createSlice({
       if(action.payload.status === 201 && !action.payload.data.msg) {
         state.gameList = action.payload.data;        
       } else {
-        state.gameList = null;
+        state.gameList = initialState.gameList;
       };
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
@@ -137,6 +141,9 @@ const userSlice = createSlice({
           state.gameList.splice(g, 1);
         };
       };
+      if(state.gameList.length === 0) {
+        state.gameList = initialState.gameList;
+      }
       state.message = action.payload.data.msg;
     })
   }
