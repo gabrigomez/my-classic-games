@@ -10,6 +10,7 @@ export const Dashboard = () => {
   const dispatch = useDispatch();
 
   const id = currentUser._id;
+  console.log(gameList);
 
   if(!isLoggedIn){
     return <Navigate to="/login" />
@@ -38,7 +39,7 @@ export const Dashboard = () => {
                 <p>My Game List</p>
               </div>
               <div className='game-gallery-images'>
-                {gameList.map((game) => (
+                {gameList?.map((game) => (
                   <img className='game-image' src={game.imageUrl} alt="" />                    
                 ))}
               </div>

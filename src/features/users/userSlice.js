@@ -120,8 +120,11 @@ const userSlice = createSlice({
       }
     });
     builder.addCase(getGame.fulfilled, (state, action) => {
-      if(action.payload.status === 201) {
+      if(action.payload.status === 201 && !action.payload.data.msg) {
         state.gameList = action.payload.data;        
+      } else {
+        state.gameList = null;
+        state.message = action.payload.data.msg;
       };
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
