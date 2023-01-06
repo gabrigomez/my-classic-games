@@ -38,7 +38,7 @@ export const Dashboard = () => {
               </div>
               <div className='game-gallery-images'>
                 {gameList?.map((game) => (
-                  <img className='game-image' src={game.imageUrl} alt="" />                    
+                  <img className='game-image' src={game.imageUrl} alt="" key={game._id} />                    
                 ))}
               </div>
             </div>          
