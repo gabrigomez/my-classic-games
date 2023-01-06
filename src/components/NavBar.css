@@ -7,9 +7,9 @@ a {
 .main-nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  
-  background: #2e2d2ed3;
+  align-items: center;  
+  background: rgba(22, 22, 22, 0.596);
+
   border: 2px solid rgba(31, 32, 32, 0.459);
   border-radius: 4px;
 }
