@@ -4,7 +4,7 @@ async function deleteGame (req, res) {
   const id = req.params;
 
   await Game.deleteOne(id);
-  res.status(200).json({ msg: 'Game Excluído com sucesso'});
+  res.status(200).json({ msg: 'Game excluído com sucesso'});
 };
 
 module.exports = deleteGame;
