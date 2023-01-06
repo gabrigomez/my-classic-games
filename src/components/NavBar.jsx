@@ -16,7 +16,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav>
+      <nav className='main-nav'>
         {isLoggedIn ? (
           <Link to="/dashboard" className="navbar-link">
             <Sword className='icon' size={24} />
