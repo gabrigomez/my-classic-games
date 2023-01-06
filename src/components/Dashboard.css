@@ -24,7 +24,8 @@
 .dashboard-game-gallery {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
+  max-width: 90%;  
 }
 
 .dashboard-title {
@@ -51,6 +52,8 @@
 
 .game-gallery-images {
   display: flex;
+  overflow-x: auto;
+  max-width: 75%;
 }
 
 .game-gallery-info {
@@ -125,3 +128,14 @@ h3 {
 .user-gamelist:hover {
   box-shadow: 0 4px 8px 0 rgba(7, 124, 153, 0.507);
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+  background-color: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(13, 105, 105);
+  border-radius: 10px;
+}
+
