@@ -1,4 +1,4 @@
-import { ClipboardText, IdentificationBadge } from 'phosphor-react';
+import { ClipboardText, IdentificationBadge, Plus } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
@@ -45,8 +45,12 @@ export const Dashboard = () => {
               </div>
             </div>          
           ) : (
-            <div>
-              Sem games na lista.
+            <div className='dashboard-game-gallery'>
+              <p>Sem games cadastrados.</p>
+              <div className='game-gallery-info'>
+                <Plus size={20} className='plus-icon'/>
+                <Link to='/add-game' className='dashboard-add-game'>Adicionar game</Link>
+              </div>
             </div>
           )}
         </div>

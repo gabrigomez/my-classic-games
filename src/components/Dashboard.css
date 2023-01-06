@@ -1,3 +1,8 @@
+.dashboard-add-game {
+  font-size: 14px;
+  cursor: pointer;
+}
+
 .dashboard-container {
   display: flex;
   flex-direction: column;
@@ -25,7 +30,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 90%;  
+  max-width: 90%;
+  
+  color: rgba(3, 235, 243, 0.623);
+  font-size: 20px;
 }
 
 .dashboard-title {
@@ -72,6 +80,10 @@ h3 {
   color: aliceblue;
 }
 
+.plus-icon {
+  margin-right: 4px;
+}
+
 .user-gamelist {
   display: flex;
   flex-direction: column;
@@ -114,7 +126,16 @@ h3 {
   font-size: 40px;
 }
 
+
 .user-icon {
+  color: aliceblue;
+}
+
+.dashboard-add-game:hover {
+  color: rgba(3, 235, 243, 0.623);
+}
+
+.game-gallery-info:hover .plus-icon {
   color: aliceblue;
 }
 

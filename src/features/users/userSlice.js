@@ -124,7 +124,6 @@ const userSlice = createSlice({
         state.gameList = action.payload.data;        
       } else {
         state.gameList = null;
-        state.message = action.payload.data.msg;
       };
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
