@@ -56,9 +56,9 @@ export const Dashboard = () => {
           <div className='user-info'>
             <IdentificationBadge className='user-icon' size={200} />
             <div className='user-email'>              
-                <h1 className='username'>
-                  {currentUser.username}
-                </h1>
+              <h1 className='username'>
+                {currentUser.username}
+              </h1>
               <h3 className='email-info'>
                 {currentUser.email}
               </h3>

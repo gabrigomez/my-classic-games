@@ -14,7 +14,7 @@ export const GameDetails = () => {
     dispatch(deleteGame({id: gameId}));
     setTimeout(() => {
       dispatch(clearMessage());
-    },4000);
+    }, 2000);
   }
 
   if(!game) {
