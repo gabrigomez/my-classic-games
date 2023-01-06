@@ -1,0 +1,13 @@
+.pagination-nav {
+  margin-top: 4px;
+}
+
+.pagination-nav > ul > li > a {
+  background-color: #2e2d2ed3;
+  color: rgba(3, 235, 243, 0.623);
+}
+
+.pagination-nav > ul > li > a:hover {
+  background-color: rgba(3, 235, 243, 0.623);
+  color: black;
+}
