@@ -20,7 +20,6 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 const store = configureStore({
   reducer: persistedReducer,
   middleware: [thunk]
-  //composeWithDevTools(applyMiddleware(...middleware))
 });
 const persistor = persistStore(store);
 

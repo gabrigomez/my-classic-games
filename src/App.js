@@ -17,14 +17,14 @@ function App() {
       <main>        
         <NavBar className="navBar" />        
         <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard/>} />
-            <Route path="/edit-user" element={<EditUser/>} />
-            <Route path="/my-game-list" element={<MyGameList/>} />
-            <Route path="/add-game" element={<AddGame/>} />
-            <Route path="/game/details/:id" element={<GameDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/edit-user" element={<EditUser/>} />
+          <Route path="/my-game-list" element={<MyGameList/>} />
+          <Route path="/add-game" element={<AddGame/>} />
+          <Route path="/game/details/:id" element={<GameDetails />} />
         </Routes>                
         <Footer />        
       </main>
