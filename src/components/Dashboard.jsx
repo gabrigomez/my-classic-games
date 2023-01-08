@@ -36,11 +36,11 @@ export const Dashboard = () => {
                 <ClipboardText color='white' size={36} />
                 <p>My Game List</p>
               </div>
-              <div className='game-gallery-images'>
+              <Link className='game-gallery-images' to="/my-game-list">
                 {gameList?.map((game) => (
                   <img className='game-image' src={game.imageUrl} alt="" key={game._id} />                    
                 ))}
-              </div>
+              </Link>
             </div>          
           ) : (
             <div className='dashboard-game-gallery'>
