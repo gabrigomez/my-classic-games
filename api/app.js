@@ -9,6 +9,7 @@ const addGame = require('./controllers/addGame');
 const getGame = require('./controllers/getGame');
 const showGameDetails = require('./controllers/showGameDetails');
 const deleteGame = require('./controllers/deleteGame');
+const editGame = require('./controllers/editGame');
 require('dotenv').config({ path: "api/.env" });
 
 const app = express();
@@ -28,6 +29,8 @@ app.post('/auth/login', login);
 
 // Change username - TODO: back the middleware to check user
 app.put("/user/:_id", editUser);
+
+app.put("/game/details/:_id", editGame);
 
 app.post("/game/:_id", addGame);
 
