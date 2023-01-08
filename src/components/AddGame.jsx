@@ -1,5 +1,5 @@
 import { ArrowUUpLeft } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addGame, clearMessage } from '../features/users/userSlice';
@@ -18,6 +18,10 @@ export const AddGame = () => {
   const navigate = useNavigate();
 
   const id = currentUser._id;
+
+  useEffect(() => {
+    dispatch(clearMessage());
+  }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
