@@ -24,7 +24,8 @@ export const AddGame = () => {
     dispatch(addGame({title, genre, description, imageUrl, id}));
     setTimeout(() => {
       dispatch(clearMessage());
-    },4000);
+      navigate('/my-game-list');
+    }, 2000);
   }
 
   return (

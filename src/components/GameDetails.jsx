@@ -12,7 +12,6 @@ export const GameDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const handleDelete = () => {
     dispatch(deleteGame({id: gameId}));
     setTimeout(() => {
