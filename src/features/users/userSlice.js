@@ -6,9 +6,9 @@ const API_URL = "http://localhost:3001/"
 export const login = createAsyncThunk('login', async(email, password) => {
   try {
     const response = await axios.post(`${API_URL}auth/login`, email, password);
-    return response.data; 
+    return response; 
   } catch (error) {
-    return error.response.data.msg;
+    return error;
   };
 });
 
@@ -92,10 +92,12 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
-      state.message = action.payload.msg;
-      state.isLoggedIn = action.payload.user ? true : false;
-      state.user = action.payload.user;
-      state.isSuccess = false;
+      if(action.payload.status === 201) {
+        state.isLoggedIn = true;
+        state.user = action.payload.data.user;
+      } else {
+        state.message = action.payload.response.data.msg;
+      };
     });
     builder.addCase(register.fulfilled, (state, action) => {
       if(action.payload.status === 201) {

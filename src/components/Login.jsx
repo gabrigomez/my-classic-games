@@ -27,7 +27,7 @@ export const Login = () => {
   
   if(isSuccess) {
     dispatch(clearSuccess());
-  }
+  };
 
   return (
     <div className='login-form-container'>      
@@ -56,7 +56,9 @@ export const Login = () => {
         <button className='login-button'> 
           Login
         </button>
-        {<div className="error-login">{message ? <p>{message}</p> : null} </div> }
+        <div className="error-login">
+          {message ? message : null} 
+        </div>
       </form>
     </div>
   );
