@@ -10,6 +10,7 @@ import { Login } from './components/Login'
 import { MyGameList } from './components/MyGameList';
 import { NavBar } from './components/NavBar';
 import { SignUp } from './components/SignUp';
+import { ProtectRoute } from './utils/ProtectRoute';
 
 function App() {
   return (
@@ -19,12 +20,42 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard/>} />
-          <Route path="/edit-user" element={<EditUser/>} />
-          <Route path="/my-game-list" element={<MyGameList/>} />
-          <Route path="/add-game" element={<AddGame/>} />
-          <Route path="/game/details/:id" element={<GameDetails />} />
+          <Route path="/" element={<Home />} />          
+          <Route path="/dashboard" 
+            element={
+              <ProtectRoute>
+                <Dashboard/>
+              </ProtectRoute>
+            }
+          />
+          <Route path="/edit-user" 
+            element={
+              <ProtectRoute>
+                <EditUser/>
+              </ProtectRoute>
+            }
+          />
+          <Route path="/my-game-list" 
+            element={
+              <ProtectRoute>
+                <MyGameList/>
+              </ProtectRoute>
+            }
+          />
+          <Route path="/add-game" 
+            element={
+              <ProtectRoute>
+                <AddGame/>
+              </ProtectRoute>
+            }
+          />
+          <Route path="/game/details/:id" 
+            element={
+              <ProtectRoute>
+                <GameDetails/>
+              </ProtectRoute>
+            }
+          />
         </Routes>                
         <Footer />        
       </main>

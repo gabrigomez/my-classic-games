@@ -12,7 +12,7 @@ export const AddGame = () => {
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
-  const { user: currentUser, message} = useSelector(store => store.users)
+  const { user: currentUser, message} = useSelector(store => store.users);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
