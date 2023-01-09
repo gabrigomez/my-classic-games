@@ -2,12 +2,13 @@ import { ArrowUUpLeft } from 'phosphor-react';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { clearMessage } from '../features/users/userSlice';
+import { clearMessage, editGame } from '../features/users/userSlice';
 
 import './EditGame.css';
 
 export const EditGame = () => {
   const { game, message } = useSelector(store => store.users);
+  const gameId = game._id;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
@@ -19,9 +20,10 @@ export const EditGame = () => {
  
   let handleEdit = (e) => {
     e.preventDefault();
+    dispatch(editGame({title: newTitle, genre: newGenre, description: newDescription, imageUrl: newImageUrl, id: gameId }));
     setTimeout(() => {
       dispatch(clearMessage());
-    },2000);
+    }, 2000);
   };
 
   return (

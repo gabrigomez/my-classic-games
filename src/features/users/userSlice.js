@@ -66,6 +66,15 @@ export const deleteGame = createAsyncThunk('delete a game', async({id}) => {
   };
 });
 
+export const editGame = createAsyncThunk('edit a game', async({ title, genre, description, imageUrl, id}) => {
+  try {
+    const response = await axios.put(`${API_URL}game/details/${id}`, {title, genre, description, imageUrl});
+    return response;
+  } catch (error) {
+    return error;
+  };
+});
+
 const initialState = {
   user: null,
   isLoggedIn: false,
@@ -146,6 +155,14 @@ const userSlice = createSlice({
       if(state.gameList.length === 0) {
         state.gameList = initialState.gameList;
       }
+      state.message = action.payload.data.msg;
+    });
+    builder.addCase(editGame.fulfilled, (state, action) => {
+      for(let g = 0; g < state.gameList.length; g++) {
+        if (state.gameList[g]._id === state.game._id) {
+          state.gameList[g] = action.payload.data.game;
+        };
+      };
       state.message = action.payload.data.msg;
     })
   }
