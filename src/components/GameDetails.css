@@ -4,7 +4,7 @@
 }
 
 .edit-game-options {
-  align-self: end;
+  align-self: center;
   opacity: 0;
   margin-bottom: 6px;
 }
@@ -51,9 +51,11 @@
   padding: 6px;
 }
 
-.game-details-card:hover > .edit-game-options {
-  opacity: 1;
-  transition: opacity 1000ms;  
+.game-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;  
 }
 
 .game-image-info {
@@ -81,4 +83,9 @@
 
 .edit-game-button:hover {
   color: rgba(3, 235, 243, 0.623);
+}
+
+.game-image-container:hover > .edit-game-options {
+  opacity: 1;
+  transition: opacity 1000ms;  
 }
