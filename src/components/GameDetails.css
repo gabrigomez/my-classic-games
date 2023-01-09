@@ -3,6 +3,12 @@
   cursor: pointer;
 }
 
+.edit-game-options {
+  align-self: end;
+  opacity: 0;
+  margin-bottom: 6px;
+}
+
 .edit-game-icon {
   margin-right: 8px;
 }
@@ -34,7 +40,8 @@
 .game-details-card {
   display: flex;
   flex-direction: column;
-  align-items: center;    
+  align-items: center;
+  cursor: pointer;    
 }
 
 .game-description-info {
@@ -42,6 +49,11 @@
   border: 2px solid rgba(3, 235, 243, 0.164);
   border-radius: 4px;
   padding: 6px;
+}
+
+.game-details-card:hover > .edit-game-options {
+  opacity: 1;
+  transition: opacity 1000ms;  
 }
 
 .game-image-info {

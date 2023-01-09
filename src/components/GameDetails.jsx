@@ -29,7 +29,13 @@ export const GameDetails = () => {
       <div className='game-details'>
         {game? (
           <div className='game-details-card'>
-            <div>
+            <div className='edit-game-options'>
+              <Link to={`/game/edit-game/${game._id}`} className='edit-game-icon'> 
+                <Pencil size={24} className='edit-game-button' />
+              </Link>
+              <Trash size={24} className='edit-game-button' onClick={handleDelete}/>
+            </div>
+            <div className='game-image-container'>
               <img src={game.imageUrl} alt="" className='game-image-info'/> 
             </div>
             <div className='game-title-info'>
@@ -40,13 +46,7 @@ export const GameDetails = () => {
             </div>
             <div className='game-description-info'>
               {game.description}
-            </div>
-            <div className='edit-game-options'>
-              <Link to={`/game/edit-game/${game._id}`} className='edit-game-icon'> 
-                <Pencil size={24} className='edit-game-button' />
-              </Link>
-              <Trash size={24} className='edit-game-button' onClick={handleDelete}/>
-            </div>
+            </div>            
             <div className="game-details-message">
               {message ? message : null} 
             </div>
