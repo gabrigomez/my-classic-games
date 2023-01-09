@@ -71,10 +71,15 @@
 }
 
 .game-image {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   border: 2px solid rgba(3, 235, 243, 0.623);
   border-radius: 4px;
+}
+
+.game-genre {
+  font-size: 14px;
+  color: rgba(3, 235, 243, 0.623);
 }
 
 .game-title {
@@ -83,7 +88,7 @@
   color: rgba(243, 245, 245, 0.966);
   margin-top: 10px;
 
-  margin-bottom: 20px;
+  margin-bottom: 4px;
 }
 
 .my-game-list-container {

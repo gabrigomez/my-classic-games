@@ -30,7 +30,10 @@ export const MyGameList = () => {
           {currentGames.map((game) => (
             <Link to={`/game/details/${game._id}`} className='gamelist-info' key={game._id}>
               <div className='game-title'>
-                  {game.title}
+                {game.title}
+              </div>
+              <div className='game-genre'>
+                {game.genre}
               </div>
               <div>
                 <img src={game.imageUrl} alt="" className='game-image'/>              
