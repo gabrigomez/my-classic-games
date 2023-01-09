@@ -23,7 +23,7 @@
   border-radius: 8px;
 
   opacity: .8;
-  height: 70%;
+  height: 75%;
   width: 30%;
   color: aliceblue;
 
@@ -38,7 +38,7 @@
 }
 
 .game-description-info {
-  margin: 30px 6px;
+  margin: 20px 6px;
   border: 2px solid rgba(3, 235, 243, 0.164);
   border-radius: 4px;
   padding: 6px;
