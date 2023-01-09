@@ -1,3 +1,12 @@
+.edit-game-button {
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.edit-game-icon {
+  margin-right: 8px;
+}
+
 .game-details-container {
   display: flex;
   flex-direction: column;
@@ -49,17 +58,12 @@
   margin: 16px 6px 2px;
 }
 
-.game-delete-button {
-  color: aliceblue;
-  cursor: pointer;
-}
-
 .game-details-message {
   color: rgba(3, 235, 243, 0.753);
   margin-top: 6px; 
   height: 5%;
 }
 
-.game-delete-button:hover {
+.edit-game-button:hover {
   color: rgba(3, 235, 243, 0.623);
 }

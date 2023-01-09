@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react';
+import { Pencil, Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
@@ -41,12 +41,12 @@ export const GameDetails = () => {
             <div className='game-description-info'>
               {game.description}
             </div>
-            <Link to={`/game/edit-game/${game._id}`} className='game-genre-info'> 
-              <p>
-                Edit game
-              </p>
-            </Link>
-            <Trash size={36} className='game-delete-button' onClick={handleDelete}/>
+            <div className='edit-game-options'>
+              <Link to={`/game/edit-game/${game._id}`} className='edit-game-icon'> 
+                <Pencil size={24} className='edit-game-button' />
+              </Link>
+              <Trash size={24} className='edit-game-button' onClick={handleDelete}/>
+            </div>
             <div className="game-details-message">
               {message ? message : null} 
             </div>
