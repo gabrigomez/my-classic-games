@@ -6,18 +6,28 @@ import { addGame, clearMessage } from '../features/users/userSlice';
 import "./AddGame.css";
 
 export const AddGame = () => {
-
+  const options = [
+    'Action', 
+    'Adventure', 
+    'Fight', 
+    'FPS',
+    'Racing', 
+    'Role-Playing', 
+    'Simulation', 
+    'Strategy',
+    'Sports',
+    'Terror',
+    'TPS'
+  ];
   const [title, setTitle] = useState('');
-  const [genre, setGenre] = useState('');
+  const [genre, setGenre] = useState(options[0]);
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
   const { user: currentUser, message} = useSelector(store => store.users);
-
+  const id = currentUser._id;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const id = currentUser._id;
 
   useEffect(() => {
     dispatch(clearMessage());
@@ -30,7 +40,7 @@ export const AddGame = () => {
       dispatch(clearMessage());
       navigate('/my-game-list');
     }, 2000);
-  }
+  };
 
   return (
     <div className='add-game-container'>      
@@ -46,16 +56,16 @@ export const AddGame = () => {
             value={title}
             onChange={(e) => setTitle(e.target.value)} 
           />
-        </div>
-        <div className='genre'>
-          <input 
-            type="text" 
-            name='genre' 
-            placeholder='Genre'
-            value={genre}
-            onChange={(e) => setGenre(e.target.value)}
-          />
-        </div>
+        </div>        
+        <select className='genre'
+          value={genre} 
+          onChange={(e) => setGenre(e.target.value)}>
+            {options.map((value) => (
+              <option value={value} key={value}>
+                {value}
+              </option>
+            ))}
+        </select>
         <div className='description'>
           <input 
             type="text" 
@@ -83,5 +93,5 @@ export const AddGame = () => {
         </div> 
       </form>
     </div>
-  )
-}
+  );
+};

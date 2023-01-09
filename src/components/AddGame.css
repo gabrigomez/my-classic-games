@@ -48,12 +48,14 @@
   height: 5%;   
 }
 
-input {
+input, .genre {
   background: none;
   border: none;
   border-bottom: 1px solid rgba(3, 235, 243, 0.5);
   outline: none;
+  
   color: aqua;
+  text-align-last:center;
 }
 
 h1 {
@@ -77,11 +79,15 @@ h1 {
   color: rgba(3, 235, 243, 0.623);
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
+select:focus>option {
+  background: rgba(22, 22, 22, 0.815);
+}
+
 ::placeholder {
   text-align: center;
   color: rgba(255, 255, 255, 0.568)
-}
-
-input:focus::placeholder {
-  color: transparent;
 }
