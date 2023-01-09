@@ -52,7 +52,7 @@ export const EditGame = () => {
           </h1>
           <input          
           value={newDescription}
-          onChange={(e) => setNewDescription(e.target.value)} 
+          onChange={(e) => setNewDescription(e.target.value)}
           />                
         </div>
         <div className='edit-game'>
