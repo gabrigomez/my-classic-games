@@ -1,0 +1,73 @@
+.edit-game-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;  
+}
+
+.edit-game-card {
+  background-color: rgb(36, 37, 37);
+  padding: 20px;
+  border: 2px solid rgba(3, 235, 243, 0.623);
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  opacity: .8;
+  height: 70%;
+  width: 40%;
+}
+
+.edit-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  margin-bottom: 10px;
+}
+
+.edit-game h1 {
+  font-size: 26px;
+}
+
+.edit-button {
+  background-color: rgba(155, 155, 155, 0.26);
+  font-size: 24px;
+  margin-top: 20px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  color: rgba(3, 235, 243, 0.623);
+}
+
+.edit-message {
+  color: rgba(3, 235, 243, 0.753);
+  height: 5%;
+  margin-top: 4px;   
+}
+
+.edit-back-button {
+  color: aliceblue;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input {
+  text-align: center;
+}
+
+.edit-back-button:hover {
+  color: rgba(3, 235, 243, 0.623);
+}
+
+.edit-button:hover {
+  background-color: rgba(3, 235, 243, 0.623);
+  transition: .5s;
+  color: black;
+}

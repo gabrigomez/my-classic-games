@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AddGame } from './components/AddGame';
 import { Dashboard } from './components/Dashboard';
+import { EditGame } from './components/EditGame';
 import { EditUser } from './components/EditUser';
 import { Footer } from './components/Footer';
 import { GameDetails } from './components/GameDetails';
@@ -53,6 +54,12 @@ function App() {
             element={
               <ProtectRoute>
                 <GameDetails/>
+              </ProtectRoute>
+            }
+          /><Route path="/game/edit-game/:id" 
+            element={
+              <ProtectRoute>
+                <EditGame/>
               </ProtectRoute>
             }
           />

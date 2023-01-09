@@ -1,7 +1,7 @@
 import { Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { clearMessage, deleteGame, showGameDetails } from '../features/users/userSlice';
 import './GameDetails.css';
 
@@ -41,6 +41,11 @@ export const GameDetails = () => {
             <div className='game-description-info'>
               {game.description}
             </div>
+            <Link to={`/game/edit-game/${game._id}`} className='game-genre-info'> 
+              <p>
+                Edit game
+              </p>
+            </Link>
             <Trash size={36} className='game-delete-button' onClick={handleDelete}/>
             <div className="game-details-message">
               {message ? message : null} 
