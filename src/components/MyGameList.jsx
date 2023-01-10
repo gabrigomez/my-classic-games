@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { clearGame } from '../features/users/userSlice';
+import { GenreInfo } from './GenreInfo';
 import "./MyGameList.css";
 import { Pagination } from './Pagination';
 
@@ -33,7 +34,8 @@ export const MyGameList = () => {
                 {game.title}
               </div>
               <div className='game-genre'>
-                {game.genre}
+                {/* {game.genre} */}
+                <GenreInfo genre={game.genre} />
               </div>
               <div>
                 <img src={game.imageUrl} alt="" className='game-image'/>              
