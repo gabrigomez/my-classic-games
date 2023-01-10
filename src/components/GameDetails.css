@@ -59,8 +59,8 @@
 }
 
 .game-image-info {
-  height: 250px;
-  width: 250px;
+  height: 100%;
+  width: 100%;
   border: 2px solid rgba(3, 235, 243, 0.623);
   border-radius: 6px;
 }
