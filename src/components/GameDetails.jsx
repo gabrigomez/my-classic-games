@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { clearMessage, deleteGame, showGameDetails } from '../features/users/userSlice';
 import './GameDetails.css';
+import { GenreInfo } from './GenreInfo';
 
 export const GameDetails = () => {
   const { game, message } = useSelector(store => store.users);
@@ -41,9 +42,7 @@ export const GameDetails = () => {
             <div className='game-title-info'>
               {game.title}
             </div>
-            <div className='game-genre-info'>
-              {game.genre}
-            </div>
+            <GenreInfo genre={game.genre}/>
             <div className='game-description-info'>
               {game.description}
             </div>            
