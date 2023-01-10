@@ -62,3 +62,20 @@
 .home-card:hover .home-title {
   color: rgb(0, 174, 255);
 }
+
+@media only screen and (max-width: 390px) {
+  .home-card {
+    height: 30%;
+    width: 80%;  
+  }
+
+  .home-title {
+    font-size: 20px;
+    color: black;
+  }
+
+  .home-icon {
+    visibility: visible;
+    opacity: 1;
+  }
+}

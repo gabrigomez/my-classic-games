@@ -60,6 +60,19 @@
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 1300ms;
 }
+
 .footer-container:hover .line {
   opacity: .6;
+}
+
+@media only screen and (max-width: 390px) {
+  .footer-container {
+    width: 100%;
+    background-color: #030303;
+    color: aliceblue;
+  }
+
+  .footer-icon {
+    opacity: 1;
+  }
 }

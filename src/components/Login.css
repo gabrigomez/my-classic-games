@@ -75,3 +75,10 @@ h1 {
 input:focus::placeholder {
   color: transparent;
 }
+
+@media only screen and (max-width: 390px) {
+  .login-form {
+    height: 80%;
+    width: 80%;  
+  }
+}

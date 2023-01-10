@@ -42,3 +42,10 @@ a {
   color: rgb(3, 235, 243);
 }
 
+@media only screen and (max-width: 390px) {
+  .login, .sign-up, .navbar-link {
+    padding: 10px;
+    justify-content: space-between;
+  }
+}
+
