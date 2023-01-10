@@ -91,3 +91,22 @@ select:focus>option {
   text-align: center;
   color: rgba(255, 255, 255, 0.568)
 }
+
+@media only screen and (max-width: 500px) {
+  .add-game {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .add-game {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 760px) and (max-width: 1100px) {
+  .add-game {
+    height: 60%;
+    width: 40%;
+  }
+}
