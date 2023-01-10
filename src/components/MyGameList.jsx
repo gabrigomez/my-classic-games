@@ -33,10 +33,7 @@ export const MyGameList = () => {
               <div className='game-title'>
                 {game.title}
               </div>
-              <div className='game-genre'>
-                {/* {game.genre} */}
-                <GenreInfo genre={game.genre} />
-              </div>
+              <GenreInfo genre={game.genre}/>
               <div>
                 <img src={game.imageUrl} alt="" className='game-image'/>              
               </div>

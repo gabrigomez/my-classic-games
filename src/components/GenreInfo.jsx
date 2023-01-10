@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
   Factory, 
   FinnTheHuman, 
@@ -12,7 +13,7 @@ import {
   Strategy, 
   Sword 
 } from 'phosphor-react';
-import React from 'react';
+import './GenreInfo.css';
 
 export const GenreInfo = (genre) => {
   const genreObj = {
@@ -22,50 +23,50 @@ export const GenreInfo = (genre) => {
 
   switch (genre.genre) {
     case ('Action'):
-      genreObj.icon = <Ghost size={24} color="white" />;
+      genreObj.icon = <Ghost size={20} color="white" />;
       break;
     case ('Adventure'):
-      genreObj.icon = <FinnTheHuman size={24} color="white" />
+      genreObj.icon = <FinnTheHuman size={20} color="white" />
       break;
     case ('Fight'):
-      genreObj.icon = <Skull size={24} color="white"/>;
+      genreObj.icon = <Skull size={20} color="white"/>;
       break;
     case ('FPS'):
-      genreObj.icon = <Sword size={24} color="white"/>;
+      genreObj.icon = <Sword size={20} color="white"/>;
     break;
     case ('Racing'):
-      genreObj.icon = <FlagCheckered size={24} color="white"/>;
+      genreObj.icon = <FlagCheckered size={20} color="white"/>;
     break;
     case ('Role-Playing'):
-      genreObj.icon = <MagicWand size={24} color="white"/>;
+      genreObj.icon = <MagicWand size={20} color="white"/>;
     break;
     case ('Simulation'):
-      genreObj.icon = <Factory size={24} color="white"/>;
+      genreObj.icon = <Factory size={20} color="white"/>;
     break;
     case ('Strategy'):
-      genreObj.icon = <Strategy size={24} color="white"/>;
+      genreObj.icon = <Strategy size={20} color="white"/>;
     break;
     case ('Sports'):
-      genreObj.icon = <SoccerBall size={24} color="white"/>;
+      genreObj.icon = <SoccerBall size={20} color="white"/>;
     break;
     case ('Terror'):
-      genreObj.icon = <SmileyNervous size={24} color="white"/>;
+      genreObj.icon = <SmileyNervous size={20} color="white"/>;
     break;
     case ('TPS'):
-      genreObj.icon = <PersonSimpleRun size={24} color="white"/>;
+      genreObj.icon = <PersonSimpleRun size={20} color="white"/>;
     break;
     default:
-      genreObj.icon = <GameController size={24} color="white"/>;
+      genreObj.icon = <GameController size={20} color="white"/>;
     };  
 
   return (
-    <div>
-      <div>
+    <div className='genre-info-container'>
+      <div className='genre-info-icon'>
         {genreObj.icon}
       </div>
-      <div>
+      <p className='genre-info-title'>
         {genreObj.title}
-      </div>
+      </p>
     </div>
   );
 };

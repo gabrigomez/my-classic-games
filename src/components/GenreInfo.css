@@ -1,0 +1,16 @@
+.genre-info-container {
+  display: flex;
+  font-size: 16px;
+}
+
+.genre-info-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.genre-info-title {
+  color: rgba(3, 235, 243, 0.623);
+  margin: 0px;
+}
+
