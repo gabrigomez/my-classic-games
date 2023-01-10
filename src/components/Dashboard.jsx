@@ -33,7 +33,7 @@ export const Dashboard = () => {
           {gameList? (
             <div className='dashboard-game-gallery'>
               <div className='game-gallery-info'>
-                <ClipboardText color='white' size={36} />
+                <ClipboardText color='white' />
                 <p>My Game List</p>
               </div>
               <Link className='game-gallery-images' to="/my-game-list">
@@ -54,14 +54,14 @@ export const Dashboard = () => {
         </div>
         <div className='user-card'>
           <div className='user-info'>
-            <IdentificationBadge className='user-icon' size={200} />
+            <IdentificationBadge className='user-icon'/>
             <div className='user-email'>              
               <h1 className='username'>
                 {currentUser.username}
               </h1>
-              <h3 className='email-info'>
+              <p className='email-info'>
                 {currentUser.email}
-              </h3>
+              </p>
               <Link className='edit-info-link' to="/edit-user">
                 Edit my info
               </Link>              

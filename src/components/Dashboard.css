@@ -78,6 +78,7 @@
 h3 {
   font-weight: 500;
   color: aliceblue;
+  text-align: center;
 }
 
 .plus-icon {
@@ -124,11 +125,13 @@ h3 {
   text-shadow: 0 0 2px rgba(3, 235, 243, 0.623);
   margin-bottom: 0px;
   font-size: 40px;
-}
 
+  text-align: center;
+}
 
 .user-icon {
   color: aliceblue;
+  font-size: 200px;
 }
 
 .dashboard-add-game:hover {
@@ -160,4 +163,44 @@ h3 {
   background: rgb(13, 105, 105);
   border-radius: 10px;
 }
+
+@media only screen and (max-width: 700px) {
+  .dashboard-card {
+    background-color: rgb(36, 37, 37);
+
+    height: 80%;
+    width: 90%; 
+  }
+
+  .dashboard-gamelist-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-game-gallery > p {
+    text-align: center;
+  }
+
+  .email-info {
+    font-size: 14px;
+  }
+
+  .game-gallery-info > p {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .user-icon {
+    font-size: 140px;
+  }
+
+  .username {
+    font-size: 24px;
+  }
+}
+
 
