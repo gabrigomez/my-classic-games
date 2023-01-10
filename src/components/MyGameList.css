@@ -38,7 +38,7 @@
   align-items: center;
   justify-items: center;
   height: 80%;
-  width: 80%;
+  width: 95%;
 }
 
 .gamelist-card-empty {
@@ -121,6 +121,19 @@
 
 .gamelist-info:hover .eye-open {
   display: block;  
+}
+
+@media only screen and (max-width: 1000px) {
+  .gamelist-card {    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);  
+    padding: 10px;
+  }
+
+  .game-title {
+    font-size: 16px;
+  }
 }
 
 
