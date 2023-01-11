@@ -23,6 +23,7 @@ export const EditUser = () => {
     dispatch(editUser({username:newUsername, email: newEmail, id}));
     setTimeout(() => {
       dispatch(clearMessage());
+      navigate('/dashboard');
     },2000);
   };
 
