@@ -18,7 +18,7 @@ export const NavBar = () => {
     <>
       <nav className='main-nav'>
         {isLoggedIn ? (
-          <Link to="/dashboard" className="navbar-link">
+          <Link to="/dashboard" className="navbar-dashboard-link">
             <Sword className='icon' size={24} />
             <p>
               Dashboard

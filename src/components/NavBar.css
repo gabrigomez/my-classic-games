@@ -28,24 +28,42 @@ a {
   padding: 20px;
 }
 
+.navbar-dashboard-link {
+  display: flex ;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  
+  padding: 20px;
+}
+
 .icon {
   margin-right: 6px; 
   color: rgb(247, 244, 244); 
 }
 
-.navbar-link:hover {
+.navbar-link:hover, .navbar-dashboard-link:hover {
   color: rgb(3, 235, 243);
   background: var(--bg-secondary);
 }
 
-.navbar-link:hover .icon {
+.navbar-link:hover .icon, .navbar-dashboard-link:hover .icon {
   color: rgb(3, 235, 243);
 }
 
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 500px) {
   .login, .sign-up, .navbar-link {
-    padding: 10px;
     justify-content: space-between;
   }
+
+  .navbar-link, .navbar-dashboard-link {
+    font-size: 12px;
+  }
+
+  .navbar-dashboard-link > p {
+    display: flex;
+    align-items: center;
+  }
+
 }
 
