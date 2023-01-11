@@ -1,5 +1,5 @@
 import { Eye, EyeClosed, PlusCircle, SmileyXEyes } from 'phosphor-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { clearGame } from '../features/users/userSlice';
@@ -8,18 +8,23 @@ import "./MyGameList.css";
 import { Pagination } from './Pagination';
 
 export const MyGameList = () => {
-  const { gameList, game } = useSelector(store => store.users);
-  const dispatch = useDispatch();
-
+  const { gameList, game } = useSelector(store => store.users);  
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage] = useState(8);
-
+  const [gamesPerPage, setGamesPerPage] = useState(8);
+  
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = gameList?.slice(indexOfFirstGame, indexOfLastGame);
-
+  
+  const dispatch = useDispatch();
   const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
 
+  useEffect(() => {
+    if(window.innerWidth < 1000) {
+      setGamesPerPage(4);
+    };    
+  }, [setGamesPerPage]);
+  
   if(game) {
     dispatch(clearGame());
   };

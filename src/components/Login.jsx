@@ -6,8 +6,7 @@ import { login, clearMessage, clearSuccess } from '../features/users/userSlice';
 import './Login.css'
 
 export const Login = () => {
-  const dispatch = useDispatch();
-  
+  const dispatch = useDispatch();  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { isLoggedIn, message, isSuccess } = useSelector(store => store.users);
