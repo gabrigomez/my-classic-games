@@ -164,7 +164,7 @@ h3 {
   border-radius: 10px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) {
   .dashboard-card {
     background-color: rgb(36, 37, 37);
 
@@ -183,7 +183,7 @@ h3 {
   }
 
   .email-info {
-    font-size: 14px;
+    font-size: 11px;
   }
 
   .game-gallery-info > p {
@@ -202,5 +202,7 @@ h3 {
     font-size: 24px;
   }
 }
+
+
 
 
