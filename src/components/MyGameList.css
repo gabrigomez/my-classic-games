@@ -137,4 +137,10 @@
   }
 }
 
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .game-title {
+    font-size: 18px;
+  }
+}
+
 
