@@ -18,7 +18,7 @@ As principais ferramentas usadas neste projeto são:
 - Express
 - Mongoose
 - Nodemon
-- React2.0",
+- React
 - Redux Toolkit
 
 ## Preview :eyes:
