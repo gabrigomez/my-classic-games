@@ -22,7 +22,7 @@ As principais ferramentas usadas neste projeto são:
 - React
 - Redux Toolkit
 
-Backend disponível [Aqui] (https://github.com/gabrigomez/my-classic-games-api).
+Backend disponível [aqui](https://github.com/gabrigomez/my-classic-games-api).
 
 ## Preview :eyes:
 
