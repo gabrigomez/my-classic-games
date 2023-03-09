@@ -17,9 +17,12 @@ As principais ferramentas usadas neste projeto são:
 - Axios
 - Express
 - Mongoose
+- MongoDB
 - Nodemon
 - React
 - Redux Toolkit
+
+Backend disponível [Aqui] (https://github.com/gabrigomez/my-classic-games-api).
 
 ## Preview :eyes:
 
