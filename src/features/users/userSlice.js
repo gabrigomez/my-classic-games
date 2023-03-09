@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from 'axios';
 
-const API_URL = "http://localhost:3001/"
+const API_URL = "https://my-classic-games-api.vercel.app/"
 
 export const login = createAsyncThunk('login', async(email, password) => {
   try {
