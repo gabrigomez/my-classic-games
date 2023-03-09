@@ -9,10 +9,9 @@ export const Footer = () => {
         Develop by gabrigomez
       </p>
       <div className="line" />          
-      <a className='footer-link' href="https://github.com/gabrigomez">
+      <a className='footer-link' href="https://github.com/gabrigomez/my-classic-games">
         <GithubLogo className='footer-icon' size={20} />
-      </a>
-     
+      </a>     
     </div>
   )
 }
