@@ -12,6 +12,7 @@
 
   border-radius: 10px;
   color: rgba(3, 235, 243, 0.5);
+  padding: 4px;
 }
 
 .add-game-list-button:hover {
