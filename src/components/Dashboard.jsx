@@ -1,4 +1,4 @@
-import { ClipboardText, IdentificationBadge, Plus } from 'phosphor-react';
+import { ClipboardText, IdentificationBadge, Plus, Spiral } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import { getGame } from '../features/users/userSlice';
 import './Dashboard.css';
 
 export const Dashboard = () => {
-  const { isLoggedIn, user: currentUser, gameList } = useSelector(store => store.users);
+  const { isLoggedIn, user: currentUser, gameList, loading } = useSelector(store => store.users);
   const dispatch = useDispatch();
   const id = currentUser._id;
 
@@ -29,7 +29,7 @@ export const Dashboard = () => {
             <h3>
               Welcome to dashboard.
             </h3> 
-          </div>          
+          </div>
           {gameList? (
             <div className='dashboard-game-gallery'>
               <div className='game-gallery-info'>
@@ -44,11 +44,20 @@ export const Dashboard = () => {
             </div>          
           ) : (
             <div className='dashboard-game-gallery'>
-              <p>Sem games cadastrados.</p>
-              <div className='game-gallery-info'>
-                <Plus size={20} className='plus-icon'/>
-                <Link to='/add-game' className='dashboard-add-game'>Adicionar game</Link>
-              </div>
+              {loading && (
+                <div className='flex w-full justify-center items-center'>                    
+                  <Spiral className="text-cyan-300 animate-spin h-20 w-20 mt-1" />
+                </div>
+              )}
+              {gameList?.length > 0 && (
+                <div className='flex w-full justify-center items-center'>
+                  <p>Sem games cadastrados.</p>
+                  <div className='game-gallery-info'>
+                    <Plus size={20} className='plus-icon'/>
+                    <Link to='/add-game' className='dashboard-add-game'>Adicionar game</Link>
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -63,11 +63,15 @@
   display: flex;
   overflow-x: auto;
   max-width: 100%;
+  width: 280px;
+
+  height: 180px;
 }
 
 .game-gallery-info {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .game-gallery-info p {

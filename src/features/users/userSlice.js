@@ -139,11 +139,15 @@ const userSlice = createSlice({
         state.message = action.payload.response.data.msg;
       }
     });
+    builder.addCase(getGame.pending, (state) => {
+      state.loading = true;
+    });
     builder.addCase(getGame.fulfilled, (state, action) => {
+      state.loading = false;
       if(action.payload.status === 201 && !action.payload.data.msg) {
         state.gameList = action.payload.data;        
       } else {
-        state.gameList = initialState.gameList;
+        state.gameList = null;
       };
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
