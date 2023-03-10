@@ -1,4 +1,4 @@
-import { Pencil, Trash } from 'phosphor-react';
+import { Pencil, Spiral, Trash } from 'phosphor-react';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ export const GameDetails = () => {
   return (
     <div className='game-details-container'>
       <div className='game-details'>
-        {game? (
+        {game ? (
           <div className='game-details-card'>
             <div className='game-image-container'>
               <div className='edit-game-options'>
@@ -51,8 +51,8 @@ export const GameDetails = () => {
             </div>
           </div>
         ) : 
-        <div>
-          Loading...
+        <div className='flex justify-center items-center'>
+          <Spiral className="text-cyan-300 animate-spin h-20 w-20 mr-3" />
         </div>
         }        
       </div>

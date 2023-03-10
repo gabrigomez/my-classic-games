@@ -90,7 +90,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     clearMessage: (state) => {
-      state.message = ''
+      state.message = '';
     },
     clearSuccess: (state) => {
       state.isSuccess = false;
