@@ -42,6 +42,10 @@
   
   border-radius: 8px;
 }
+.add-game h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 
 .add-game-list-message {
   color: rgba(3, 235, 243, 0.753);
