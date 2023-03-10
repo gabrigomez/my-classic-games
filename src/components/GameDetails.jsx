@@ -50,11 +50,11 @@ export const GameDetails = () => {
               {message ? message : null} 
             </div>
           </div>
-        ) : 
+        ) : ( 
         <div className='flex justify-center items-center'>
           <Spiral className="text-cyan-300 animate-spin h-20 w-20 mr-3" />
         </div>
-        }        
+        )}        
       </div>
     </div>
   )
