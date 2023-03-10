@@ -1,4 +1,4 @@
-import { ArrowUUpLeft } from 'phosphor-react';
+import { ArrowUUpLeft, Spiral } from 'phosphor-react';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -24,7 +24,7 @@ export const AddGame = () => {
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
-  const { user: currentUser, message} = useSelector(store => store.users);
+  const { user: currentUser, message, loading } = useSelector(store => store.users);
   const id = currentUser._id;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -90,7 +90,12 @@ export const AddGame = () => {
         <ArrowUUpLeft size={36} className="add-game-back-button" onClick={() => navigate(-1)}/>
         <div className="add-game-list-message">
           {message ? message : null} 
-        </div> 
+        </div>
+        {loading && (
+          <div className='flex w-full justify-center items-center'>                    
+            <Spiral className="text-cyan-300 animate-spin h-7 w-7 mt-1" />
+          </div>
+        )} 
       </form>
     </div>
   );

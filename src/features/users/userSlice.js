@@ -127,7 +127,11 @@ const userSlice = createSlice({
       state.user.email = action.payload.data.user.email;
       state.message = action.payload.data.msg;
     });
+    builder.addCase(addGame.pending, (state) => {
+      state.loading = true;
+    });
     builder.addCase(addGame.fulfilled, (state, action) => {
+      state.loading = false;
       if(action.payload.status === 201) {
         if (state.gameList === null) {
           state.gameList = [action.payload.data.game];

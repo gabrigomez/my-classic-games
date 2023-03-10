@@ -2,7 +2,7 @@ import { Eye, EyeClosed, PlusCircle, SmileyXEyes } from 'phosphor-react';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { clearGame } from '../features/users/userSlice';
+import { clearGame, clearMessage } from '../features/users/userSlice';
 import { GenreInfo } from './GenreInfo';
 import "./MyGameList.css";
 import { Pagination } from './Pagination';
@@ -28,6 +28,8 @@ export const MyGameList = () => {
   if(game) {
     dispatch(clearGame());
   };
+
+  dispatch(clearMessage());
 
   return (
     <div className='my-game-list-container'>
