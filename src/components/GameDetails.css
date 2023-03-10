@@ -4,9 +4,10 @@
 }
 
 .edit-game-options {
+  display: flex;
   align-self: center;
   opacity: 0;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
 }
 
 .edit-game-icon {
