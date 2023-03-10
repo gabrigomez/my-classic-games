@@ -38,7 +38,8 @@
 
 .dashboard-title {
   color: rgb(30, 138, 180);
-  text-align: center;  
+  text-align: center;
+  font-size: 36px;  
 }
 
 .email-info {
