@@ -31,7 +31,7 @@ export const Login = () => {
   return (
     <div className='login-form-container'>      
       <form className='login-form' onSubmit={handleSubmit}>        
-        <h1>
+        <h1 className='text-3xl mb-2'>
           Login
         </h1>
         <div className='email'>
@@ -52,7 +52,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>        
-        <button className='login-button'> 
+        <button className='login-button p-2'> 
           Login
         </button>
         <div className="error-login">
