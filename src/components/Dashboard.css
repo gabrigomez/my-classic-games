@@ -66,6 +66,8 @@
   width: 280px;
 
   height: 180px;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-gallery-info {

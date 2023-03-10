@@ -30,7 +30,7 @@ export const Dashboard = () => {
               Welcome to dashboard.
             </h3> 
           </div>
-          {gameList? (
+          {gameList?.length > 0 ? (
             <div className='dashboard-game-gallery'>
               <div className='game-gallery-info'>
                 <ClipboardText color='white' />
@@ -49,8 +49,8 @@ export const Dashboard = () => {
                   <Spiral className="text-cyan-300 animate-spin h-20 w-20 mt-1" />
                 </div>
               )}
-              {gameList?.length > 0 && (
-                <div className='flex w-full justify-center items-center'>
+              {gameList?.length === 0 && (
+                <div className='flex flex-col w-full justify-center items-center'>
                   <p>Sem games cadastrados.</p>
                   <div className='game-gallery-info'>
                     <Plus size={20} className='plus-icon'/>

@@ -147,7 +147,7 @@ const userSlice = createSlice({
       if(action.payload.status === 201 && !action.payload.data.msg) {
         state.gameList = action.payload.data;        
       } else {
-        state.gameList = null;
+        state.gameList = [];
       };
     });
     builder.addCase(showGameDetails.fulfilled, (state, action) => {
