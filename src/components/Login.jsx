@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, clearMessage, clearSuccess } from '../features/users/userSlice';
 
 import './Login.css'
+import { Spiral } from 'phosphor-react';
 
 export const Login = () => {
   const dispatch = useDispatch();  
@@ -58,11 +59,11 @@ export const Login = () => {
         <div className="error-login">
           {message ? message : null} 
         </div>
-        {loading && (
-          <div className='text-blue-200'>
-            Loading...
-          </div>
-        )}
+        <div className='h-7 w-7 mt-2'>
+          {loading && (
+            <Spiral className="text-cyan-300 animate-spin h-7 w-7 mr-3" />
+          )}
+        </div>
       </form>
     </div>
   );
