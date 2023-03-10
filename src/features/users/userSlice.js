@@ -82,6 +82,7 @@ const initialState = {
   gameList: null,
   message: '',
   game: null,
+  loading: false,
 };
 
 const userSlice = createSlice({
@@ -100,11 +101,15 @@ const userSlice = createSlice({
     logout: () => initialState
   },
   extraReducers: (builder) => {
+    builder.addCase(login.pending, (state) => {
+      state.loading = true;
+    });
     builder.addCase(login.fulfilled, (state, action) => {
+      state.loading = false;
       if(action.payload.status === 201) {
         state.isLoggedIn = true;
-        state.user = action.payload.data.user;
-      } else {
+        state.user = action.payload.data.user;        
+      } else {        
         state.message = action.payload.response.data.msg;
       };
     });

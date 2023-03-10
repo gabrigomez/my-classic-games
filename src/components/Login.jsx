@@ -9,7 +9,7 @@ export const Login = () => {
   const dispatch = useDispatch();  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoggedIn, message, isSuccess } = useSelector(store => store.users);
+  const { isLoggedIn, message, isSuccess, loading } = useSelector(store => store.users);
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -58,6 +58,11 @@ export const Login = () => {
         <div className="error-login">
           {message ? message : null} 
         </div>
+        {loading && (
+          <div className='text-blue-200'>
+            Loading...
+          </div>
+        )}
       </form>
     </div>
   );

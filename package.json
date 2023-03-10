@@ -55,6 +55,7 @@
     "json-server": "^0.17.1",
     "json-server-auth": "^2.1.0",
     "nodemon": "^2.0.20",
-    "redux-devtools-extension": "^2.13.9"
+    "redux-devtools-extension": "^2.13.9",
+    "tailwindcss": "^3.2.7"
   }
 }
