@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   height: 100%;
 }
 
@@ -31,7 +31,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 90%;
-  
+
   color: rgba(3, 235, 243, 0.623);
   font-size: 20px;
 }
@@ -39,7 +39,7 @@
 .dashboard-title {
   color: rgb(30, 138, 180);
   text-align: center;
-  font-size: 36px;  
+  font-size: 36px;
 }
 
 .email-info {
@@ -52,22 +52,22 @@
 .edit-info-link {
   text-decoration: none;
   color: rgb(13, 105, 105);
-  font-size: 14px;  
+  font-size: 14px;
 }
 
 .game-image {
-  margin: 10px;
+  margin: 5px;
+  max-height: 120px;
+  max-width: 120px;  
 }
 
 .game-gallery-images {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   overflow-x: auto;
   max-width: 100%;
-  width: 280px;
-
-  height: 180px;
-  align-items: center;
-  justify-content: center;
+  
+  height: 180px;  
 }
 
 .game-gallery-info {
@@ -176,7 +176,7 @@ h3 {
     background-color: rgb(36, 37, 37);
 
     height: 80%;
-    width: 90%; 
+    width: 90%;
   }
 
   .dashboard-gamelist-info {
