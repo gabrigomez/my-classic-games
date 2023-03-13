@@ -24,7 +24,7 @@ export const EditUser = () => {
     setTimeout(() => {
       dispatch(clearMessage());
       navigate('/dashboard');
-    },2000);
+    }, 2000);
   };
 
   return (

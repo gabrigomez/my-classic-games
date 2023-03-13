@@ -23,7 +23,9 @@ export const EditGame = () => {
     dispatch(editGame({title: newTitle, genre: newGenre, description: newDescription, imageUrl: newImageUrl, id: gameId }));
     setTimeout(() => {
       dispatch(clearMessage());
-    }, 2000);
+      navigate('/my-game-list');
+    }, 3000);
+
   };
 
   return (
