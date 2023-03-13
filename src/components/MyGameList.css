@@ -123,6 +123,13 @@
   display: block;  
 }
 
+@media only screen and (max-width: 400px) {
+  .game-image {
+    height: 100px;
+    width: 100px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .gamelist-card {    
     display: grid;
