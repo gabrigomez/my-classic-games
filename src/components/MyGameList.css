@@ -84,6 +84,12 @@
   margin-top: 10px;
 
   margin-bottom: 4px;
+  max-height: 24px;
+  max-width: 200px;
+  overflow: hidden;
+  
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .my-game-list-container {
@@ -130,6 +136,18 @@
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .game-title {
+    max-width: 110px;
+  }
+}
+
+@media only screen and (min-width:501px) and (max-width: 1400px) {
+  .game-title {
+    max-width: 170px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .gamelist-card {    
     display: grid;
@@ -144,10 +162,5 @@
   }
 }
 
-@media only screen and (min-width: 1001px) and (max-width: 1200px) {
-  .game-title {
-    font-size: 18px;
-  }
-}
 
 
