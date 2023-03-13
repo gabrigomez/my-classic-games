@@ -10,7 +10,7 @@ import { Pagination } from './Pagination';
 export const MyGameList = () => {
   const { gameList, game } = useSelector(store => store.users);  
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage, setGamesPerPage] = useState(8);
+  const [gamesPerPage, setGamesPerPage] = useState(window.innerWidth < 1000 ? 4 : 8);
   
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
@@ -19,12 +19,16 @@ export const MyGameList = () => {
   const dispatch = useDispatch();
   const paginate = (pageNumbers) => setCurrentPage(pageNumbers);
 
-  useEffect(() => {
-    if(window.innerWidth < 1000) {
-      setGamesPerPage(4);
-    };    
+  useEffect(() => {    
+    window.onresize = () => {
+      if(window.innerWidth < 1000) {
+        setGamesPerPage(4);        
+      } else {
+        setGamesPerPage(8);
+      };      
+    }
   }, [setGamesPerPage]);
-  
+
   if(game) {
     dispatch(clearGame());
   };
